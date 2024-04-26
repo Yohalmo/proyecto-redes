@@ -1,0 +1,603 @@
+/* clases para la ruleta */
+
+body {
+    color: white;
+    background-image: url("images/fondo.jpg");
+  background-color: #121212;
+  background: radial-gradient(circle at 100px 100px, #091018, #0e192d) !important;
+    /* background-color: #016D29; */
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.players{
+    background: radial-gradient(circle, #2d2e31, #040d16) !important;
+}
+
+.bgbody{
+    background: #fafafa10;
+    backdrop-filter: blur(0.4rem);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    -webkit-backdrop-filter: blur(0.4rem);
+}
+
+#fichaMove{
+    height: 50px;    
+    width: 50px;
+}
+
+.content-flex {
+    display: flex;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.bg-red,
+.bg-red>div {
+    background-color: red;
+}
+
+.bg-black,
+.bg-black>div {
+    background-color: black;
+}
+
+.bg-green,
+.bg-green>div {
+    background-color: green;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+tr {
+    width: 100%;
+    user-select: none;
+}
+
+td {
+    height: 70px !important;
+    width: 70px !important;
+    border: 3px solid white;
+    text-align: center;
+    font-size: 40px;
+    position: relative;
+}
+
+.bgtd {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    padding: 5px;
+    height: 100%;
+    width: 100%;
+}
+
+.main-container {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.absolute-container {
+    position: absolute;
+    width: 100%;
+}
+
+.circle-number {
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+.relativetableItems{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.absolute-class{
+    position: absolute;
+}
+
+.circle-number strong {
+    position: absolute;
+}
+
+.square-number {
+    margin: auto;
+    height: 100%;
+    width: 90%;
+    border-radius: 50% 15% 15% 50%;
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+td.bg-red.hover .bgtd {
+    background-color: #FCB7B4;
+    backdrop-filter: blur(10px);
+}
+
+td.bg-black.hover .bgtd {
+    background-color: rgb(75, 74, 74);
+    backdrop-filter: blur(10px);
+}
+
+td.bg-green.hover .bgtd {
+    background-color: rgb(165, 253, 148);
+    backdrop-filter: blur(10px)
+}
+
+.td {
+    height: 70px !important;
+    width: 70px !important;
+    border: 3px solid white;
+    text-align: center;
+    font-size: 40px;
+    position: relative;
+}
+
+.td.bg-red.hover .bgtd {
+    background-color: #FCB7B4;
+    backdrop-filter: blur(10px);
+}
+
+.td.bg-black.hover .bgtd {
+    background-color: rgb(75, 74, 74);
+    backdrop-filter: blur(10px);
+}
+
+.td.bg-green.hover .bgtd {
+    background-color: rgb(165, 253, 148);
+    backdrop-filter: blur(10px)
+}
+
+.buttons {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 0 15px;
+}
+
+.button-play {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin: 0 5px;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('images/casino.png') no-repeat center;
+    background-size:cover;
+    font-size: 25px;
+}
+.button-play div{
+    background: rgb(65, 30, 30);
+    padding: 2px 10px;
+    border-radius: 10px;
+    margin-top: 70px;
+
+}
+
+.container-ruleta {
+    background-color: rgba(0, 0, 0, 0.3);
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.fichas {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.fichas img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 1s;
+}
+
+.nodrag-image {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.girar {
+    transform: rotateY(-180deg);
+}
+
+.fichaNumber {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+}
+
+.coin-item {
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    position: relative;
+    font-size: 15px;
+}
+
+.coin-item img {
+    height: 100%;
+    width: 100%;
+}
+
+.coin-item strong {
+    user-select: none;
+}
+
+#container-fichas{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: 3px solid #fafafa10;
+    background: radial-gradient(circle, #924747, #2d0e0e) !important;
+}
+
+.img-ficha{
+    background: radial-gradient(circle, #865959, #302f2f) !important;
+    border-radius: 50%;
+    padding: 1px;
+    height: 90px;
+    width: 90px;
+}
+
+.selected-ficha{
+    margin-top: -25px;
+    transform: scale(1.17);
+}
+
+
+.ruleta {
+    height: 85vh;
+    width: 85vh;
+    border-radius: 50%;
+    background: radial-gradient( rgb(80, 22, 22), #1b0602);
+    display: flex;
+    margin: 50px auto;
+    border: #000 solid 5px;
+}
+
+
+@media screen and (min-width: 0px) {
+
+    .ruleta-numbers .wheel .number {
+        font-size: 8px !important;
+    }
+
+    .ruleta-numbers .wheel .number span {
+        font-size: 15px !important;
+    }
+}
+
+#lstPlayers{
+    display: none;
+}
+
+@media screen and (min-width: 920px) {
+    table{
+        width: 70% !important;
+        margin-left: 29%;
+    }
+
+    #lstPlayers{
+        width: 23%;
+        margin-left: 3%;
+        position: absolute;
+        margin-top: 50px;
+        height: 85vh;
+        background: #fafafa10;
+        border-radius: 20px;
+        border: 3px solid #fafafa10;
+        backdrop-filter: blur(0.4rem);
+        -webkit-backdrop-filter: blur(0.4rem);
+        display: block;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .ruleta {
+        height: 85vh;
+        width: 85vh;
+    }
+    
+    .tdfooter {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .main-container {
+        transform: rotate(90deg);
+        position: absolute;
+        margin-top: 200px;
+        display: block;
+    }
+
+    .circle-number {
+        transform: rotate(-90deg);
+    }
+
+    #contentResult{
+        position: absolute;
+        margin-top: 25%;
+        z-index: 10;
+    }
+
+    .divrotar {
+        transform: rotate(-90deg);
+        width: 20%;
+    }
+
+    .tdfooter {
+        height: 100px !important;
+        font-size: 25px;
+    }
+
+    .main-container table {
+        width: 982px !important;
+        max-width: 982px !important;
+    }
+
+    #divfichas {
+        position: absolute;
+        margin-top: 1050px !important;
+    }
+
+    @media screen and (max-width: 700px) {
+        .main-container {
+            margin-top: 155px;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .main-container {
+            margin-top: 110px;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .main-container {
+            margin-top: 50px;
+            margin-left: 10px;
+        }
+        
+        .ruleta{
+            height: 95vw;
+            width: 95vw;
+        }
+
+        .ball{
+            height: 10px !important;
+            width: 10px !important;
+        }
+
+        .side-ball{
+            width: 30px !important;
+            height: 30px !important;
+        }
+
+        .middle-ball{
+            width: 55px !important;
+            height: 55px !important;
+        }        
+    }
+
+    @media screen and (max-width: 400px) {
+        .main-container {
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+    }
+
+    @media screen and (max-width: 300px) {
+        .main-container {
+            margin-top: -50px;
+            margin-left: 65px;
+        }
+    }
+
+    @media screen and (max-width: 200px) {
+        .main-container {
+            margin-top: -90px;
+            margin-left: 110px;
+        }
+    }
+
+    @media screen and (max-width: 100px) {
+        .main-container {
+            margin-top: -145px;
+            margin-left: 140px;
+        }
+    }
+}
+
+.ruleta-numbers {
+    position: relative;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    margin: auto;
+    box-shadow: 5px #192d02;
+    justify-content: center;
+    align-items: center;
+}
+
+.ball {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    z-index: 10;
+    top: 10%;
+}
+
+.stoped {
+    top: 10%;
+}
+
+.orbitar {
+    top: 50%;
+    left: 50%;
+    transform-origin: center center;
+}
+
+@keyframes orbitar {
+    0% {
+        transform: rotate(0deg)translate(-170px) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg) translate(-170px) rotate(-360deg);
+    }
+}
+
+.ruleta-numbers .wheel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px white solid;
+    background-color: white;
+}
+
+.ruleta-numbers .wheel .number {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: var(--clr);
+    transform-origin: bottom right;
+    transform: rotate(calc(9.729deg * var(--i)));
+    clip-path: polygon(0 0, 15% 0, 100% 100%, 0 15%);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    margin-bottom: 300px;
+    opacity: var(--opacity);
+}
+
+.ruleta-numbers .wheel .number span {
+    position: relative;
+    transform: rotate(310deg);
+    margin-top: -33%;
+    margin-left: -33%;
+    font-size: 25px;
+}
+
+.spinCenter {
+    position: absolute;
+    width: 65%;
+    height: 65%;
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    user-select: none;
+    border: white 3px solid;
+    background: radial-gradient(circle at 100px 100px, #892c10, #000) !important;
+}
+
+.secondLine {
+    height: 85%;
+    width: 85%;
+    border: 3px solid white;
+    border-radius: 50%;
+    z-index: 10;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.center-circle {
+    background: radial-gradient(circle at 30% 30%, #f3c620, #000);
+    border-radius: 50%;
+}
+
+.middle-ball {
+    height: 70px;
+    width: 70px;
+}
+
+.side-ball {
+    width: 40px;
+    height: 40px;
+}
+
+.middle-bar {
+    background: radial-gradient(circle at 44%, #f3c620, #6a570f);
+    height: 10px;
+    width: 90%;
+    position: absolute;
+    border-radius: 10%;
+}
+
+.rotar-ruleta {
+    animation: wheelRotate 10s linear infinite;
+}
+
+@keyframes wheelRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-359deg);
+    }
+}
+
+.result {
+    min-height: 270px;
+    min-width: 200px;
+    background: radial-gradient( #ec550f, #572c21);
+    border-radius: 10px;
+    border: 4px #ff9900 solid;
+    font-size: 30px;
+}
+
+
+#result{
+    font-size: 80px;
+}
