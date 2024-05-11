@@ -1,6 +1,3 @@
-
-
-
 let orbitarElement = document.getElementById('orbitar');
 let angle;
 let containerWidth;
@@ -11,11 +8,12 @@ let time;
 let seleccionados;
 let currentCoin = 0;
 let apostado = 0;
-let labelsWin = { 'menor' : 'Bajos', 'mayor' : 'Altos', 'par': 'Pares', 'impar' : 'Impares' };
+let labelsWin = { 'menor' : 'Bajos', 'mayor' : 'Altos', 'par': 'Pares', 'impar' : 'Impares', 'cero' : 'Cero' };
 let coinslist = [100, 50, 20, 10, 5, 1];
 let useCoin;
 let moverFicha = false;
 const ficha = document.getElementById('fichaMove');
+var audio;
 
 document.addEventListener('mousemove', mouseMove);
 
@@ -128,6 +126,12 @@ function StartGame() {
     $('.wheel .ruletaNumber').css('--opacity', 0.5);
 
     setTimeout(() => {
+        audio = new Audio("sounds/sound.mp3");
+        audio.play();
+    }, 1500);
+
+    setTimeout(() => {
+
         $('.ruleta').addClass('rotar-ruleta');
         var ruletaNumbersElement = document.querySelector('.ruleta-numbers');
         continuar = true;
@@ -139,13 +143,15 @@ function StartGame() {
         time = Math.floor(Math.random() * 15) + 1;
 
         var intervalID = setInterval(SetSpeed, time * 1000);
-
+        
+        
         setTimeout(() => {
             speed = 0;
             clearInterval(intervalID);
             continuar = false;
             getGanador();
 
+            audio.pause();
             setTimeout(() => {
                 $('.ruleta').removeClass('rotar-ruleta');
             }, 1000);
@@ -179,6 +185,8 @@ function getGanador() {
 
     let idNumber = $(listElementsAtBall.first()).attr('id');
     let winner = parseInt(idNumber.replace('ruletaNumber', '')) + 1;
+    winner = winner == 37 ? 0 : winner;
+
     let numeroGanador = $('#ruletaNumber' + winner).find('strong').html();
     $('#result').html(numeroGanador);
     

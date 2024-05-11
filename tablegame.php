@@ -4,10 +4,10 @@
         for ($i = 0; $i < 3; $i++) { ?>
             <tr class="row-items">
                 <?php if (!$i) { ?>
-                    <td rowspan="3" class="bg-green border-0 unselected ficha-item">
+                    <td rowspan="3" class="bg-green border-0 unselected ficha-item cero">
                         <div class="bgtd"></div>
                         <div class="square-number">
-                            <strong class="absolute-class">0</strong>
+                            <strong class="absolute-class" id="contenedor0">0</strong>
                             <div class="divficha"></div>
                         </div>
                     </td>
