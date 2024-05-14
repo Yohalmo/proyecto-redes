@@ -1,117 +1,59 @@
-/* Estilo general */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #353232;
-    color: #333;
+/* Estilos para la barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #8e44ad, #3498db); /* Fondo degradado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 10px 20px;
+    color: white;
 }
 
-/* Estilo de los botones de inicio de sesión y registro */
-.auth-links {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+.logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
 }
 
 .auth-links button {
-    margin-left: 10px;
     padding: 8px 12px;
-    border: 1px solid #3498db;
+    border: 1px solid white;
     border-radius: 5px;
     background: none;
-    color: #3498db;
+    color: white;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .auth-links button:hover {
-    background-color: #3498db;
-    color: white;
+    background-color: white;
+    color: #3498db;
 }
 
-/* Barra de menú lateral */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Posición inicial fuera de la pantalla */
-    width: 250px;
-    height: 100%;
-    background-color: #2c3e50; /* Color de fondo oscuro */
-    color: white;
-    padding: 10px 0;
-    transition: left 0.3s ease-in-out; /* Transición suave */
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Cuando la barra lateral está abierta */
-.sidebar.open {
-    left: 0; /* Desplaza la barra lateral a su posición normal */
-}
-
-/* Estilo de los enlaces en la barra lateral */
-.sidebar a {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    color: white;
-    text-decoration: none;
-    padding: 12px 15px;
-    margin: 5px 0;
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease-in-out;
-}
-
-.sidebar a i {
-    font-size: 20px;
-    margin-right: 10px;
-}
-
-.sidebar a:hover {
-    background-color: #34495e; /* Color de fondo al pasar el cursor */
-}
-
-/* Botón para abrir el menú lateral */
-.menu-toggle {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 28px; /* Tamaño más grande para las tres rayitas */
-    background-color: transparent;
-    border: none;
-    color: white; /* Color blanco para el icono del menú */
-    cursor: pointer;
-    z-index: 1001; /* Asegura que el botón esté por encima de otros elementos */
-}
-
-/* Botón para cerrar la barra lateral */
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px; /* Posición a la derecha de la barra lateral */
-    font-size: 28px; /* Tamaño más grande para la X */
-    color: white; /* Color blanco para la X */
-    cursor: pointer;
-    z-index: 1002; /* Asegura que el botón esté por encima de otros elementos */
-}
-
-/* Estilo del contenido */
+/* Estilos para el contenido principal */
 .content {
     padding: 20px;
-    transition: margin-left 0.3s ease-in-out;
 }
 
-.sidebar.open ~ .content {
-    margin-left: 250px; /* Desplaza el contenido principal cuando el menú está abierto */
-}
-
-/* Otros estilos de la página */
 .hero-section {
     text-align: center;
     padding: 50px;
-    background-color: #34495e; /* Color de fondo oscuro */
+    background-color: #f1c40f; /* Color de fondo */
     color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 .hero-section p {
@@ -120,84 +62,29 @@ body {
 }
 
 .hero-section button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 5px;
     border: none;
-    background-color: #e67e22; /* Color naranja */
+    background-color: #3498db; /* Color azul */
     color: white;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .hero-section button:hover {
-    background-color: #d35400; /* Color naranja más oscuro */
+    background-color: #2980b9; /* Color azul más oscuro */
 }
 
-/* Registro inmediato */
-.registro-inmediato {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.registro-inmediato h3 {
-    margin-bottom: 15px;
-}
-
-/* Estilo de los botones de redes sociales */
-.social-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.social-buttons a {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    color: white;
-    text-decoration: none;
-}
-
-.social-buttons .facebook {
-    background-color: #4267B2;
-}
-
-.social-buttons .facebook:hover {
-    background-color: #365899;
-}
-
-.social-buttons .google {
-    background-color: #DB4437;
-}
-
-.social-buttons .google:hover {
-    background-color: #C33A29;
-}
-
-.social-buttons .twitch {
-    background-color: #6441A5;
-}
-
-.social-buttons .twitch:hover {
-    background-color: #522F80;
-}
-
-/* Ajustes de los íconos dentro de los botones */
-.social-buttons a i {
-    font-size: 24px;
-}
-
-/* Sección de juegos */
+/* Estilos para las tarjetas de juego */
 .games-section {
     padding: 20px;
+    background-color: #ecf0f1; /* Color de fondo */
+    border-radius: 10px;
 }
 
 .games-section h2 {
     text-align: center;
-    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .games-grid {
@@ -210,97 +97,44 @@ body {
     background-color: white;
     padding: 20px;
     margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 30%;
 }
 
-game-card img {
+.game-card img {
     width: 100%;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
-game-card h3 {
+.game-card h3 {
     margin-top: 10px;
 }
 
-game-card p {
+.game-card p {
     margin-bottom: 10px;
 }
 
-game-card button {
+.game-card button {
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
-    background-color: #e67e22;
+    background-color: #3498db; /* Color azul */
     color: white;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-game-card button:hover {
-    background-color: #d35400;
+.game-card button:hover {
+    background-color: #2980b9; /* Color azul más oscuro */
 }
 
-/* Pie de página */
+/* Estilos para el pie de página */
 footer {
     background-color: #2c3e50; /* Color de fondo oscuro */
     color: white;
     padding: 10px;
     text-align: center;
-}
-
-/* Modales */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    text-align: center;
-}
-
-.modal-content input, .modal-content button {
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    border: 1px sólido #ccc;
-}
-
-.modal-content button {
-    background-color: #e67e22;
-    color: white;
-    border: ninguno;
-    cursor: apuntador;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.modal-content button:hover {
-    background-color: #d35400;
-}
-
-/* Cierre del modal */
-.close {
-    cursor: pointer;
-    float: right;
-    font-size: 24px;
-    color: black;
-}
-
-/* Efecto de desenfoque cuando los modales están abiertos */
-body.modal-open #content {
-    filter: blur(5px);
+    border-radius: 10px;
 }

@@ -9,33 +9,29 @@
 </head>
 
 <body>
-    <!-- Botón para abrir el menú lateral -->
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-
-    <!-- Barra de menú lateral -->
-    <nav class="sidebar" id="sidebar">
-        <div class="close-btn" onclick="toggleMenu()">×</div>
-        <a href="#"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#"><i class="fas fa-gamepad"></i> Juegos</a>
-        <a href="#"><i class="fas fa-info-circle"></i> Sobre nosotros</a>
-        <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Casino Palms</a>
+        </div>
+        <div class="nav-links">
+            <a href="#"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#"><i class="fas fa-gamepad"></i> Juegos</a>
+            <a href="#"><i class="fas fa-info-circle"></i> Sobre nosotros</a>
+            <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+        </div>
+        <div class="auth-links">
+            <button onclick="abrirModal('inicioSesion')">Iniciar Sesión</button>
+            <button onclick="abrirModal('registrarse')">Registrarse</button>
+        </div>
     </nav>
 
     <!-- Contenido principal -->
     <div class="content">
         <div class="hero-section">
-            <p>El mejor lugar para disfrutar de tus juegos favoritos</p>
+            <h1>Bienvenido a Casino Palms</h1>
+            <p>¡El mejor lugar para disfrutar de tus juegos favoritos!</p>
             <button>Explora juegos</button>
-            <!-- Apartado de registro inmediato -->
-            <div class="registro-inmediato">
-                <h3>Regístrate inmediatamente</h3>
-                <!-- Botones de registro con íconos de redes sociales -->
-                <div class="social-buttons">
-                    <a href="https://facebook-auth-link.com" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://google-auth-link.com" class="google"><i class="fab fa-google"></i></a>
-                    <a href="https://twitch-auth-link.com" class="twitch"><i class="fab fa-twitch"></i></a>
-                </div>
-            </div>
         </div>
 
         <!-- Sección de juegos -->
@@ -67,33 +63,33 @@
         <footer>
             &copy; CasinoPalms 2024
         </footer>
-
-        <!-- Modales de inicio de sesión y registro -->
-        <div id="modal-inicioSesion" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="cerrarModal('inicioSesion')">&times;</span>
-                <h3>Iniciar sesión</h3>
-                <form id="iniciarSesionForm">
-                    <input type="email" id="email" placeholder="Correo electrónico" required>
-                    <input type="password" id="password" placeholder="Contraseña" required>
-                    <button type="submit">Iniciar sesión</button>
-                </form>
-            </div>
-        </div>
-
-        <div id="modal-registrarse" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="cerrarModal('registrarse')">&times;</span>
-                <h3>Registrarse</h3>
-                <form id="registrarseForm">
-                    <input type="text" id="nombre" placeholder="Nombre" required>
-                    <input type="email" id="email-reg" placeholder="Correo electrónico" required>
-                    <input type="password" id="password-reg" placeholder="Contraseña" required>
-                    <button type="submit">Registrarse</button>
-                </form>
-            </div>
-        </div>
     </div> <!-- Fin del contenido principal -->
+
+    <!-- Modales de inicio de sesión y registro -->
+    <div id="modal-inicioSesion" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal('inicioSesion')">&times;</span>
+            <h3>Iniciar sesión</h3>
+            <form id="iniciarSesionForm">
+                <input type="email" id="email" placeholder="Correo electrónico" required>
+                <input type="password" id="password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar sesión</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-registrarse" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal('registrarse')">&times;</span>
+            <h3>Registrarse</h3>
+            <form id="registrarseForm">
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <input type="email" id="email-reg" placeholder="Correo electrónico" required>
+                <input type="password" id="password-reg" placeholder="Contraseña" required>
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Enlaza el archivo JavaScript -->
     <script src="scriptP.js"></script>
