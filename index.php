@@ -3,118 +3,90 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Inicio de Sesión</title>
 </head>
 
 <body>
-    <?php
-    $numeros = [3, 2, 1];
-    $colores = [['red', 'black'], ['black', 'red'], ['red', 'black']];
-    $grupos = ['primeros', 'segundos', 'terceros'];
-    $numeros = range(1, 36);
-    shuffle($numeros);
-    $red = $black = [];
-    ?>
 
-    <img src="images/fichas.png" alt="" srcset="" height="200" class="position-absolute" style="margin-left: 100px">
-    <img src="images/fichas.png" alt="" srcset="" height="200" class="position-absolute" style="margin-top: 200px;">
-    <img src="images/fichas.png" alt="" srcset="" height="200" class="position-absolute" style="margin-top: 200px;margin-left: 300px;">
-    <img src="images/fichas.png" alt="" srcset="" height="200" class="position-absolute" style="margin-top: 400px;margin-left: 100px;">
+    <nav>
+        <ul>
+            <li><a href="Principal.html" class="active"><i class="fas fa-home"></i> Pagina Principal</a></li>
+            <li><a href="#"><i class="fas fa-dice"></i> Casino</a></li>
+            <li><a href="#"><i class="fas fa-futbol"></i> Deportes</a></li>
+        </ul>
+    </nav>
 
-    <img src="images/fichas.png" alt="" srcset="" height="100" class="position-absolute" style="margin-top: 60vh;margin-left: 70vw;">
-    <img src="images/fichas.png" alt="" srcset="" height="100" class="position-absolute" style="margin-top: 70vh;margin-left: 80vw;">
-
-    <div class="card" id="lstPlayers">
-        <div class="card-body">
-            <div class="text-center" style="background-color: white; border-radius: 50px; opacity:0.9">
-                <strong class="text-center" style="color: #0e0827;">Mejores jugadores</strong>
+    <div class="container-form sign-up">
+        <div class="welcome-back">
+            <div class="message">
+                <h2>Inicio de Sesión</h2>
+                <p>Si ya tienes una cuenta por favor inicia sesión aquí</p>
+                <button class="sign-up-btn">Iniciar Sesión</button>
             </div>
-            <?php for($h = 0; $h < 7; $h++){ ?>
-                <div class="card mt-2 players">
-                    <div class="card-body pt-1 pb-1">
-                        <div class="d-flex">
-                            <div style="height: 50px; width:50px; border-radius: 50%;">
-                                <img src="images/avatar-1.jpg"
-                                alt="" style="width: 100%; height:100%; object-fit: cover; border-radius: 50%">
-                            </div>
-                            <div class="ms-3">
-                                Lorem ipsum dolor
-                                <br>
-                                <small>$ 1500</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
         </div>
+        <form class="formulario">
+            <h2 class="create-account">Crear una cuenta</h2>
+            <p class="cuenta-gratis">Paso 1/2: Rellena tus datos</p>
+            <input type="text" placeholder="Nombre">
+            <input type="text" placeholder="Apellido">
+            <input type="text" placeholder="País">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Contraseña">
+            <div class="terms">
+                <div>
+                <input type="checkbox" id="terms" name="terms">
+            </div>
+                <a href="#" class="Terminos">Términos y condiciones</a>
+            </div>
+            
+            <input type="button" value="Registrarse">
+        </form>
     </div>
-    <div class="absolute-container">
-        <div class="main-container">
-            <?php include 'tablegame.php' ?>
-        </div>
-        <div id="divfichas" class="row p-0 m-0">
-            <div id="container-fichas" class="col-auto row p-2 ps-5 bg-white">
-                <div class="col-auto">
-                    <div class="img-ficha">
-                        <img class="nodrag-image" coin="1" id="coin1" src="images/ficha1.png" width="90" alt="" srcset="">
-                    </div>
+    <div class="container-form sign-in">
+        <form class="formulario">
+            <h2 class="create-account">Iniciar Sesión</h2>
+            <div class="iconos">
+                <div class="border-icon">
+                    <i class='bx bxl-instagram'></i>
                 </div>
-                <div class="col-auto">
-                    <div class="img-ficha">
-                        <img class="nodrag-image" coin="5" id="coin5" src="images/ficha5.png" width="90" alt="" srcset="">
-                    </div>
+                <div class="border-icon">
+                    <i class='bx bxl-google'></i>
                 </div>
-                <div class="col-auto">
-                    <div class="img-ficha">
-                        <img class="nodrag-image" coin="10" id="coin10" src="images/ficha10.png" width="90" alt="" srcset="">
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="img-ficha">
-                        <img class="nodrag-image" coin="20" id="coin20" src="images/ficha20.png" width="90" alt="" srcset="">
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="img-ficha">
-                        <img class="nodrag-image" coin="50" id="coin50" src="images/ficha50.png" width="90" alt="" srcset="">
-                    </div>
-                </div>
-                <div class="col-auto">
-                    <div class="img-ficha">
-                        <img class="nodrag-image" coin="100" id="coin100" src="images/ficha100.png" width="90" alt="" srcset="">
-                    </div>
+                <div class="border-icon">
+                    <i class='bx bxl-facebook-circle'></i>
                 </div>
             </div>
-
-            <div class="col-auto ms-auto me-5 mt-3">
-                <div class="d-flex justify-content-center align-items-center">
-                    <div class="btn button-play bg-black text-white"onclick="StartGame()">
-                        <div>Apostar</div>
-                    </div>
-                </div>
+            <p class="cuenta-gratis">¿Aún no tienes una cuenta?</p>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Contraseña">
+            <input type="button" value="Iniciar Sesión">
+            <div class="options">
+                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                <a href="#" class="forgot-username">¿Olvidaste tu usuario?</a>
+            </div>
+        </form>
+        <div class="welcome-back">
+            <div class="message">
+                <h2>Bienvenido de nuevo</h2>
+                <p>Si aún no tienes una cuenta por favor regístrate aquí</p>
+                <button class="sign-in-btn">Registrarse</button>
             </div>
         </div>
     </div>
-
-    <div id="icon-item-hidden" hidden>
-        <div class="coin-item">
-            <img class="absolute-container" class="nodrag-image" src="images/ficha1-empty.png" alt="" srcset="">
-            <strong class="absolute-container me-1 quantity">1</strong>
-        </div>
-    </div>
-
-    <div id="contenedor-ruleta" class="absolute-container d-none">
-        <?php include 'ruleta.php' ?>
-    </div>
-
-    <img src="images/ficha1.png" alt="" id="fichaMove" class="position-absolute d-none">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="game.js"></script>
+    <footer class="footer">
+        <p>Derechos reservados Palms 2024 &copy;</p>
+        <img src="logo_marca_registrada.png" alt="">
+    </footer>
+    <script src="script.js"></script>
 </body>
 
 </html>
