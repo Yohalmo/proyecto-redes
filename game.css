@@ -5,12 +5,19 @@ body {
     background-image: url("images/fondo.jpg");
   background-color: #121212;
   background: radial-gradient(circle at 100px 100px, #091018, #0e192d) !important;
-    /* background-color: #016D29; */
     min-height: 100vh;
     width: 100%;
     padding: 0;
     margin: 0;
     position: relative;
+}
+
+.body{
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
 }
 
 .players{
@@ -267,6 +274,7 @@ td.bg-green.hover .bgtd {
     border-bottom-right-radius: 50px;
     border: 3px solid #fafafa10;
     background: radial-gradient(circle, #924747, #2d0e0e) !important;
+    width: 700px;
 }
 
 .img-ficha{
@@ -330,37 +338,17 @@ td.bg-green.hover .bgtd {
     }
 }
 
-@media screen and (min-width: 767px) {
-    .ruleta {
-        height: 85vh;
-        width: 85vh;
-    }
-    
-    .tdfooter {
-        font-size: 30px;
-    }
-}
-
 @media screen and (max-width: 810px) {
-    .main-container {
+    .body{
         transform: rotate(90deg);
-        position: absolute;
-        margin-top: 200px;
-        display: block;
+        width: 100vh;
     }
 
-    .circle-number {
-        transform: rotate(-90deg);
-    }
-
-    #contentResult{
-        position: absolute;
-        margin-top: 25%;
-        z-index: 10;
+    #divfichas{
+        width: 100vh;
     }
 
     .divrotar {
-        transform: rotate(-90deg);
         width: 20%;
     }
 
@@ -369,81 +357,22 @@ td.bg-green.hover .bgtd {
         font-size: 25px;
     }
 
-    .main-container table {
-        width: 982px !important;
-        max-width: 982px !important;
+    tr, tbody{
+        width: 100vh !important;
+    }
+    
+    td {
+        height: 70px !important;
+        width: 70px !important;
+    }
+    
+    .td {
+        height: 70px !important;
+        width: 70px !important;
     }
 
-    #divfichas {
-        position: absolute;
-        margin-top: 1050px !important;
-    }
-
-    @media screen and (max-width: 700px) {
-        .main-container {
-            margin-top: 155px;
-        }
-    }
-
-    @media screen and (max-width: 600px) {
-        .main-container {
-            margin-top: 110px;
-        }
-    }
-
-    @media screen and (max-width: 500px) {
-        .main-container {
-            margin-top: 50px;
-            margin-left: 10px;
-        }
-        
-        .ruleta{
-            height: 95vw;
-            width: 95vw;
-        }
-
-        .ball{
-            height: 10px !important;
-            width: 10px !important;
-        }
-
-        .side-ball{
-            width: 30px !important;
-            height: 30px !important;
-        }
-
-        .middle-ball{
-            width: 55px !important;
-            height: 55px !important;
-        }        
-    }
-
-    @media screen and (max-width: 400px) {
-        .main-container {
-            margin-top: 10px;
-            margin-left: 10px;
-        }
-    }
-
-    @media screen and (max-width: 300px) {
-        .main-container {
-            margin-top: -50px;
-            margin-left: 65px;
-        }
-    }
-
-    @media screen and (max-width: 200px) {
-        .main-container {
-            margin-top: -90px;
-            margin-left: 110px;
-        }
-    }
-
-    @media screen and (max-width: 100px) {
-        .main-container {
-            margin-top: -145px;
-            margin-left: 140px;
-        }
+    .main-container, .main-container table, #divfichas {
+        width: 175vh;
     }
 }
 
