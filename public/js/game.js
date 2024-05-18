@@ -128,7 +128,7 @@ function StartGame() {
     setTimeout(() => {
         audio = new Audio("sounds/sound.mp3");
         audio.play();
-    }, 1500);
+    }, 1000);
 
     setTimeout(() => {
 

@@ -192,7 +192,7 @@ td.bg-green.hover .bgtd {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('images/casino.png') no-repeat center;
+    background: url('../images/casino.png') no-repeat center;
     background-size:cover;
     font-size: 25px;
 }

@@ -31,7 +31,7 @@
                                 <span><strong><?= $black[$k] ?></strong></span>
                             </div>
                         <?php } ?>
-                        <div class="number ruletaNumber numeroItem0" id="ruletaNumber37" style="--i:37;--clr:green">
+                        <div class="number ruletaNumber numeroItem0" id="ruletaNumber0" style="--i:0;--clr:green">
                             <span><strong>0</strong></span>
                         </div>
                     </div>

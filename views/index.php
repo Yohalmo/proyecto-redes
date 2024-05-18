@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="game.css?version=1.0">
+    <base href="/redes/">
+    <link rel="stylesheet" href="css/game.css?version=1.0">
 </head>
 
 <body>
@@ -34,17 +35,17 @@
                 <div class="text-center" style="background-color: white; border-radius: 50px; opacity:0.9">
                     <strong class="text-center" style="color: #0e0827;">Mejores jugadores</strong>
                 </div>
-                <?php for ($h = 0; $h < 7; $h++) { ?>
-                    <div class="card mt-2 players">
+                <?php foreach ($ranking as $user) { ?>
+                    <div class="card mt-2 players" id="jugador<?= $user->registro ?>">
                         <div class="card-body pt-1 pb-1">
                             <div class="d-flex">
                                 <div style="height: 50px; width:50px; border-radius: 50%;">
                                     <img src="images/avatar-1.jpg" alt="" style="width: 100%; height:100%; object-fit: cover; border-radius: 50%">
                                 </div>
                                 <div class="ms-3">
-                                    Lorem ipsum dolor
+                                    <?= $user->usuario ?>
                                     <br>
-                                    <small>$ 1500</small>
+                                    <small>$ <?= $user->dinero ?></small>
                                 </div>
                             </div>
                         </div>
@@ -116,7 +117,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="game.js"></script>
+    <script src="js/game.js"></script>
     <script>
         function adjustContainer() {
             var elemento = $('.body');
