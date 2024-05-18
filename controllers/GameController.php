@@ -17,9 +17,8 @@ class GameController extends Controller{
     }
 
     private function ranking_info(){
-        $this->make_query('select usuario_id as registro, usuario_nombre as usuario,
-         usuario_dinero as dinero from usuarios order by usuario_dinero desc limit 10');
-        return $this->query->fetchAll(PDO::FETCH_OBJ);
+        return $this->table('usuarios')->limit(10)->orderBy('usuario_dinero', 'desc')
+        ->get(['usuario_id as registro', 'usuario_nombre as usuario', 'usuario_dinero as dinero']);
     }
 
     public function save_game(){
@@ -29,8 +28,7 @@ class GameController extends Controller{
             $this->response_message(['message' => 'Se ha terminado la sesión. Por favor vuelva a ingresar sus credenciales'], 500);
         }
         
-        $this->make_query('call save_game(:id, :apuesta, :ganancia)', 
-        [':id' => $usuario->usuario_id]);
+        $this->make_query('call save_game(:id, :apuesta, :ganancia)', [':id' => $usuario->usuario_id]);
 
         $response = $this->query->fetch(PDO::FETCH_OBJ);
         $usuario->usuario_jugadas = $response->usuario_jugadas;

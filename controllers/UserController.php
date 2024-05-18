@@ -7,36 +7,44 @@ class UserController extends Controller{
     }
 
     public function login(Request $request){
-        $this->validate_inputs(['email', 'password'], $request);
 
-        $this->make_query('select * from usuarios where usuario_email = :email', 
-        [':email' => $request->email]);
+        if($this->validate_inputs(['email', 'password'], $request)){
 
-        $result = $this->query->fetch(PDO::FETCH_OBJ);
+            $result = $this->table('usuarios')->where('usuario_email', $request->email)->first();
         
-        if(password_verify($request->password, $result->usuario_password)){
-            $this->put_session('user-info', $result);
-            $this->response_message(['message' => 'Login correcto']);
+            if(password_verify($request->password, $result->usuario_password)){
+                $this->put_session('user-info', $result);
+                $this->response_message(['message' => 'Login correcto']);
+            }
+    
+            $this->response_message(['message' => 'Usuario o contraseña incorrecta'], 500);
         }
 
-        $this->response_message(['message' => 'Usuario o contraseña incorrecta'], 500);
+        $this->response_message(['message' => 'Debe de llenar el correo y la contraseña'], 500);
     }
 
     public function add_user(Request $request){
-        $this->validate_inputs(['usuario', 'email', 'password'], $request);
+        
+        if($this->validate_inputs(['usuario', 'email', 'password'], $request)){
 
-        $this->make_query('select count(*) from usuarios where usuario_email = :email', 
-        [':email' => $request->email]);
-
-        if($this->query->fetchColumn()){
-            $this->response_message(['message' => 'Ya existe un usuario con ese correo electronico registrado'], 500);
+            $info = $this->table('usuarios')->where('usuario_email', $request->email)
+            ->first(['count(*) as total']);
+    
+            if($info->total){
+                $this->response_message(['message' => 'Ya existe un usuario con ese correo electronico registrado'], 500);
+            }
+    
+            $password = password_hash($request->password, PASSWORD_DEFAULT);
+            
+            $this->table('usuarios')->insert([
+                'usuario_nombre' => $request->nombre,
+                'usuario_email' => $request->email,
+                'usuario_password' => $password
+            ]);
+    
+            $this->response_message(['message' => 'Usuario creado exitosamente']);
         }
 
-        $password = password_hash($request->password, PASSWORD_DEFAULT);
-        $insert = "insert into usuarios (usuario_nombre, usuario_email, usuario_password) values (:nombre, :email, :password)";
-
-        $this->make_query($insert, [':nombre' => $request->nombre, 
-        ':email' => $request->email, ':password' => $password]);
-        $this->response_message(['message' => 'Usuario creado exitosamente']);
+        $this->response_message(['message' => 'Debe llenar todos los campos del formulario']);
     }
 }
