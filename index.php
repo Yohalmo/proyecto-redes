@@ -38,7 +38,6 @@
             <p class="cuenta-gratis">Paso 1/2: Rellena tus datos</p>
             <input type="text" placeholder="Nombre">
             <input type="text" placeholder="Apellido">
-            <input type="text" placeholder="País">
             <input type="email" placeholder="Email">
             <input type="password" placeholder="Contraseña">
             <div class="terms">

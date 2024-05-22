@@ -41,19 +41,19 @@
             <h2>Juegos Populares</h2>
             <div class="games-grid">
                 <div class="game-card">
-                    <img src="imagen-juego1.jpg" alt="Juego 1">
-                    <h3>Juego 1</h3>
+                    <img src="img/rule.jpg" alt="Juego 1">
+                    <h3>Roulette</h3>
                     <p>Descripción breve del juego.</p>
                     <a href="index-ruleta.php" class="button"> Jugar</a>
                 </div>
                 <div class="game-card">
-                    <img src="imagen-juego2.jpg" alt="Juego 2">
+                    <img src="img/trgaperras.jpg" alt="Juego 2">
                     <h3>Juego 2</h3>
                     <p>Descripción breve del juego.</p>
                     <button class="button">Jugar</button>
                 </div>
                 <div class="game-card">
-                    <img src="imagen-juego3.jpg" alt="Juego 3">
+                    <img src="img/balck jack.jpg" alt="Juego 3">
                     <h3>Juego 3</h3>
                     <p>Descripción breve del juego.</p>
                     <button class="button">Jugar</button>
