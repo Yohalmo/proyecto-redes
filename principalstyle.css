@@ -1,0 +1,139 @@
+/* Estilos para la barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #231c25, #2a6133); /* Fondo degradado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+.auth-links button {
+    padding: 8px 12px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.auth-links button:hover {
+    background-color: white;
+    color: #0f0f0f;
+}
+
+/* Estilos para el contenido principal */
+.content {
+    padding: 20px;
+}
+
+.hero-section {
+    text-align: center;
+    padding: 50px;
+    background-color: #f1c40f; /* Color de fondo */
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-section button {
+    padding: 12px 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3498db; /* Color azul */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-section .button:hover {
+    background-color: #2980b9; /* Color azul más oscuro */
+}
+
+/* Estilos para las tarjetas de juego */
+.games-section {
+    padding: 20px;
+    background-color: #ecf0f1; /* Color de fondo */
+    border-radius: 10px;
+}
+
+.games-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.games-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.game-card {
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 30%;
+}
+
+.game-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.game-card h3 {
+    margin-top: 10px;
+}
+
+.game-card p {
+    margin-bottom: 10px;
+}
+
+.game-card .button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3498db; /* Color azul */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.game-card .button:hover {
+    background-color: #2980b9; /* Color azul más oscuro */
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: #2c3e50; /* Color de fondo oscuro */
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+}
