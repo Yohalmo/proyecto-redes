@@ -4,8 +4,9 @@
 <head>
     <title>Casino Palms</title>
     <meta charset="UTF-8">
+    <base href="/proyecto-redes/">
     <!-- Enlaza los archivos CSS y Font Awesome -->
-    <link rel="stylesheet" href="principalstyle.css?v=1">
+    <link rel="stylesheet" href="css/principalstyle.css?v=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
@@ -41,19 +42,19 @@
             <h2>Juegos Populares</h2>
             <div class="games-grid">
                 <div class="game-card">
-                    <img src="img/rule.jpg" alt="Juego 1">
+                    <img src="images/rule.jpg" alt="Juego 1">
                     <h3>Roulette</h3>
                     <p>Descripción breve del juego.</p>
-                    <a href="index-ruleta.php" class="button"> Jugar</a>
+                    <a href="ruleta" class="button"> Jugar</a>
                 </div>
                 <div class="game-card">
-                    <img src="img/trgaperras.jpg" alt="Juego 2">
+                    <img src="images/trgaperras.jpg" alt="Juego 2">
                     <h3>Juego 2</h3>
                     <p>Descripción breve del juego.</p>
                     <button class="button">Jugar</button>
                 </div>
                 <div class="game-card">
-                    <img src="img/balck jack.jpg" alt="Juego 3">
+                    <img src="images/balck jack.jpg" alt="Juego 3">
                     <h3>Juego 3</h3>
                     <p>Descripción breve del juego.</p>
                     <button class="button">Jugar</button>
@@ -107,7 +108,7 @@
                             <input type="email" id="email-reg" class="form-control" placeholder="Correo electrónico" required>
                         </div>
                         <div class="form-group mb-3">
-                            <div class="form-label small text-black">Nombre</div>
+                            <div class="form-label small text-black">Contraseña</div>
                             <input type="password" id="password-reg" placeholder="Contraseña" required class="form-control">
                         </div>
                     </form>
@@ -127,7 +128,7 @@
 
     <!-- Enlaza el archivo JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="scriptP.js"></script>
+    <script src="js/scriptP.js"></script>
 </body>
 
 </html>

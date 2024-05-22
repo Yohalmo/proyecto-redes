@@ -25,7 +25,7 @@ class UserController extends Controller{
 
     public function add_user(Request $request){
         
-        if($this->validate_inputs(['usuario', 'email', 'password'], $request)){
+        if($this->validate_inputs(['nombre', 'email', 'password'], $request)){
 
             $info = $this->table('usuarios')->where('usuario_email', $request->email)
             ->first(['count(*) as total']);

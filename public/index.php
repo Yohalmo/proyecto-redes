@@ -11,7 +11,7 @@ $datos = explode('/', $datos);
 $params = [];
 
 foreach($datos as  $item){
-    if($item != '' && $item != 'redes'){
+    if($item != '' && $item != 'proyecto-redes'){
         $params[] = $item;
     }
 }

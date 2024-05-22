@@ -7,11 +7,16 @@ class GameController extends Controller{
     }
 
     public function index(){
-        $this->view('home');
+        $this->view('index');
     }
 
-    public function games(){
-        $this->view('home');
+    public function ruleta(){
+        $ranking = $this->ranking_info();
+        $this->view('ruleta.index', compact('ranking'));
+    }
+
+    public function main_page(){
+        $this->view('Principal');
     }
 
     public function get_ranking(){
