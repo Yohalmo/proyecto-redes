@@ -7,8 +7,11 @@ class GameController extends Controller{
     }
 
     public function index(){
-        $ranking = $this->ranking_info();
-        $this->view('index', compact('ranking'));
+        $this->view('home');
+    }
+
+    public function games(){
+        $this->view('home');
     }
 
     public function get_ranking(){
