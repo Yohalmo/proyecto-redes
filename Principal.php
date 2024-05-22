@@ -44,7 +44,7 @@
                     <img src="imagen-juego1.jpg" alt="Juego 1">
                     <h3>Juego 1</h3>
                     <p>Descripción breve del juego.</p>
-                    <a href="index.php" class="button"> Jugar</a>
+                    <a href="index-ruleta.php" class="button"> Jugar</a>
                 </div>
                 <div class="game-card">
                     <img src="imagen-juego2.jpg" alt="Juego 2">

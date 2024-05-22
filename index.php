@@ -19,7 +19,7 @@
 
     <nav>
         <ul>
-            <li><a href="Principal.html" class="active"><i class="fas fa-home"></i> Pagina Principal</a></li>
+            <li><a href="Principal.php" class="active"><i class="fas fa-home"></i> Pagina Principal</a></li>
             <li><a href="#"><i class="fas fa-dice"></i> Casino</a></li>
             <li><a href="#"><i class="fas fa-futbol"></i> Deportes</a></li>
         </ul>

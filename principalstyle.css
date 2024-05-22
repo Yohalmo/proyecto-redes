@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #8e44ad, #3498db); /* Fondo degradado */
+    background: linear-gradient(to right, #231c25, #2a6133); /* Fondo degradado */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
     padding: 10px 20px;
     color: white;
