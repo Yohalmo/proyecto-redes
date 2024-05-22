@@ -10,8 +10,12 @@ $datos = explode('?', $ruta)[0] ?? [''];
 $datos = explode('/', $datos);
 $params = [];
 
+$server = explode('/public/', $_SERVER['SCRIPT_NAME']);
+$server = $server[0];
+$server = str_replace('/', '', $server);
+
 foreach($datos as  $item){
-    if($item != '' && $item != 'proyecto-redes'){
+    if($item != '' && $item != $server){
         $params[] = $item;
     }
 }
