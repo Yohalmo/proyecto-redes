@@ -3,16 +3,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to right, #231c25, #2a6133); /* Fondo degradado */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+    background: linear-gradient(to right, #0c1417, #2a6133); /* Fondo degradado */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra */
     padding: 10px 20px;
     color: white;
 }
 
 .logo a {
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 65px; /* Ajusta este valor según sea necesario */
+    width: 10rem;
 }
 
 .nav-links a {
@@ -37,6 +41,7 @@
     color: #0f0f0f;
 }
 
+
 /* Estilos para el contenido principal */
 .content {
     padding: 20px;
@@ -45,7 +50,7 @@
 .hero-section {
     text-align: center;
     padding: 50px;
-    background-color: #b8d3bb; /* Color de fondo */
+    background-color: #286d30; /* Color de fondo */
     color: white;
     border-radius: 10px;
     margin-bottom: 30px;
@@ -65,7 +70,7 @@
     padding: 12px 24px;
     border-radius: 5px;
     border: none;
-    background-color: #3498db; /* Color azul */
+    background-color: #296d64; /* Color azul */
     color: white;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;

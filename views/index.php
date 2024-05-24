@@ -35,7 +35,7 @@
         </div>
         <form class="formulario">
             <h2 class="create-account">Crear una cuenta</h2>
-            <p class="cuenta-gratis">Paso 1/2: Rellena tus datos</p>
+            <p class="cuenta-gratis"> Rellena tus datos</p>
             <input type="text" placeholder="Nombre">
             <input type="text" placeholder="Apellido">
             <input type="email" placeholder="Email">
