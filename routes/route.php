@@ -2,6 +2,7 @@
 $routes = [
 
     '' => ['GameController', 'index'],
+    'home' => ['GameController', 'index'],
     'login-usuario' => ['UserController', 'login'],
     'registro-de-usuario' => ['UserController', 'add_user'],
     'pagina-principal' => ['GameController', 'main_page'],

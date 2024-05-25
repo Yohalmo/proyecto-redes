@@ -19,7 +19,6 @@
                     $color = $colores[$i][$result];
                     ${$color}[] = $number;
                     $grupo = round(($j / 4) - 0.4);
-
                 ?>
                     <td class="col-xl-1 col-md-12 col-sm-12 ficha-item unselected bg-<?php echo  $color . ($number % 2 ? ' impar ' : ' par ') . ($j < 6 ? ' menor ' : ' mayor ') . $grupos[$grupo] ?> ">
                         <div class="bgtd"></div>

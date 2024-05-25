@@ -11,16 +11,6 @@
 
 <body>
     <div class="body">
-
-        <?php
-        $numeros = [3, 2, 1];
-        $colores = [['red', 'black'], ['black', 'red'], ['red', 'black']];
-        $grupos = ['primeros', 'segundos', 'terceros'];
-        $numeros = range(1, 36);
-        shuffle($numeros);
-        $red = $black = [];
-        ?>
-
         <img src="images/fichas.png" alt="" srcset="" height="200" class="position-absolute" style="margin-left: 100px">
         <img src="images/fichas.png" alt="" srcset="" height="200" class="position-absolute" style="margin-top: 200px;">
         <img src="images/fichas.png" alt="" srcset="" height="200" class="position-absolute" style="margin-top: 200px;margin-left: 300px;">
@@ -39,7 +29,7 @@
                         <div class="card-body pt-1 pb-1">
                             <div class="d-flex">
                                 <div style="height: 50px; width:50px; border-radius: 50%;">
-                                    <img src="images/avatar-1.jpg" alt="" style="width: 100%; height:100%; object-fit: cover; border-radius: 50%">
+                                    <img src="images/user-icon.png" alt="" style="width: 100%; height:100%; object-fit: cover; border-radius: 50%">
                                 </div>
                                 <div class="ms-3">
                                     <?= $user->usuario ?>
@@ -53,6 +43,22 @@
             </div>
         </div>
         <div class="absolute-container">
+              
+    <div class="d-flex justify-content-between mt-2">
+        <div></div>
+        <div></div>
+        <div>
+            <div class="d-flex justify-content-center align-items-center">
+                <?php if(!isset($infoUser->usuario_id)){ ?>
+                    <a class="btn-iniciosesion" href="home"><strong>Iniciar sesión</strong></a>
+                <?php }else{ ?>
+                    <a class="btn-iniciosesion" href="home"><strong>Apostado: $ <span id="lblApostado">0.00</span></strong></a>
+                    <div class="btn-dinero ms-3"><strong>Dinero: $ 1,000</strong></div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+
             <div class="main-container">
                 <?php include 'tablegame.php' ?>
             </div>
@@ -91,10 +97,12 @@
                 </div>
 
                 <div class=" me-5 mt-3">
-                    <div class="d-flex justify-content-center align-items-center">
+                    <div class="d-flex justify-content-center align-items-center" style="height: 100%;">
+                    <?php if(isset($infoUser->usuario_id)){ ?>
                         <div class="btn button-play bg-black text-white" onclick="StartGame()">
                             <div>Apostar</div>
                         </div>
+                    <?php } ?>
                     </div>
                 </div>
             </div>
@@ -118,29 +126,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="js/game.js"></script>
     <script>
-        function adjustContainer() {
-            var elemento = $('.body');
-            var anchoPantalla = parseFloat(document.documentElement.clientWidth);
-            var altoPantalla = $(window).height();
-            
-            if(anchoPantalla > 810){
-                elemento.css('left', '');
-                elemento.css('top', '');
-                elemento.css('width', '');
-            }else{
-                //elemento.css('width', altoPantalla);
-                elemento.offset({
-                    top: 0,
-                    right: 0
-                })
-            }   
-        }
-
-        window.addEventListener('resize', adjustContainer);
-        window.addEventListener('orientationchange', adjustContainer);
-
-        // Ajuste inicial
-        adjustContainer();
+        set_money(<?= $infoUser->usuario_dinero ?? 0 ?>);
     </script>
 </body>
 

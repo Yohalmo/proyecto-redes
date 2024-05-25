@@ -14,8 +14,7 @@ let useCoin;
 let moverFicha = false;
 const ficha = document.getElementById('fichaMove');
 var audio;
-
-document.addEventListener('mousemove', mouseMove);
+let dinero = 0;
 
 //cambiar color de fondo cuando el mouse pasa sobre una ficha
 $('body').on('mouseenter mouseleave', '.row-items td.unselected', function() {
@@ -78,6 +77,10 @@ $('body').on('click', '.img-ficha', function(){
     }
 });
 
+function set_money(money){
+    dinero = money;
+}
+
 function UnSelectedCoin(){
     $('.img-ficha').find('img').removeClass('selected-ficha');
     currentCoin = 0;
@@ -86,7 +89,7 @@ function UnSelectedCoin(){
 }
 
 function SumarFichas(item, classAffected) {
-    if(currentCoin == 0){ return; }
+    if(currentCoin == 0 || (apostado + currentCoin) > dinero){ return; }
 
     let quantity = currentCoin;
 
@@ -109,6 +112,7 @@ function SumarFichas(item, classAffected) {
     }
 
     apostado += parseInt(currentCoin);
+    $('#lblApostado').html(apostado);
     $(item).find('.quantity').html(quantity);
 }
 
@@ -234,3 +238,25 @@ function mouseMove(e){
     ficha.style.left = `${e.clientX}px`;
     ficha.style.top = `${e.clientY + 10}px`;
 }
+
+function adjustContainer() {
+    var elemento = $('.body');
+    var anchoPantalla = parseFloat(document.documentElement.clientWidth);
+    
+    if(anchoPantalla > 810){
+        elemento.css('left', '');
+        elemento.css('top', '');
+        elemento.css('width', '');
+    }else{
+        elemento.offset({
+            top: 0,
+            right: 0
+        })
+    }   
+}
+
+adjustContainer();
+
+window.addEventListener('resize', adjustContainer);
+window.addEventListener('orientationchange', adjustContainer);
+document.addEventListener('mousemove', mouseMove);

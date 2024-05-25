@@ -90,7 +90,7 @@ td {
 
 .main-container {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 15px;
     margin-bottom: 30px;
     display: flex;
 }
@@ -529,4 +529,28 @@ td.bg-green.hover .bgtd {
 
 #result{
     font-size: 80px;
+}
+
+.btn-iniciosesion{
+    padding: 8px 30px;
+    background: radial-gradient(circle, #064cce, #192947) !important;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 20px;
+    border: 1px solid white;
+}
+
+.btn-dinero{
+    padding: 8px 30px;
+    background: radial-gradient(circle, #06ce06, #0f310c) !important;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 20px;
+    border: 1px solid #1c4718;
+}
+
+.btn-iniciosesion:hover{
+    color: white;
 }

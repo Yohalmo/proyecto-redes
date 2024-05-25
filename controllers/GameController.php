@@ -12,7 +12,16 @@ class GameController extends Controller{
 
     public function ruleta(){
         $ranking = $this->ranking_info();
-        $this->view('ruleta.index', compact('ranking'));
+        $infoUser = $this->get_session('user-info');
+
+        $numeros = [3, 2, 1];
+        $colores = [['red', 'black'], ['black', 'red'], ['red', 'black']];
+        $grupos = ['primeros', 'segundos', 'terceros'];
+        $numeros = range(1, 36);
+        shuffle($numeros);
+        $red = $black = [];
+
+        $this->view('ruleta.index', compact('ranking', 'infoUser', 'numeros', 'colores', 'grupos', 'red', 'black'));
     }
 
     public function main_page(){
