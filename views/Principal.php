@@ -11,22 +11,23 @@
 </head>
 
 <body>
-    <!-- Barra de navegación -->
-    <nav class="navbar">
-        <div class="logo">
-            <a href="#">Casino Palms</a>
-        </div>
-        <div class="nav-links">
-            <a href="#"><i class="fas fa-home"></i> Inicio</a>
-            <a href="#"><i class="fas fa-gamepad"></i> Juegos</a>
-            <a href="#"><i class="fas fa-info-circle"></i> Sobre nosotros</a>
-            <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
-        </div>
-        <div class="auth-links">
-            <button data-bs-toggle="modal" data-bs-target="#modal-inicioSesion">Iniciar Sesión</button>
-            <button data-bs-toggle="modal" data-bs-target="#modal-registrarse">Registrarse</button>
-        </div>
-    </nav>
+  <!-- Barra de navegación -->
+<nav class="navbar">
+    <div class="logo">
+        <a href="#"><img src="images/logotran.png" alt="Logo"></a>
+    </div>
+    <div class="nav-links">
+        <a href="#"><i class="fas fa-home"></i> Inicio</a>
+        <a href="#"><i class="fas fa-gamepad"></i> Juegos</a>
+        <a href="#"><i class="fas fa-info-circle"></i> Sobre nosotros</a>
+        <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
+    </div>
+    <div class="auth-links">
+        <button data-bs-toggle="modal" data-bs-target="#modal-inicioSesion">Iniciar Sesión</button>
+        <button data-bs-toggle="modal" data-bs-target="#modal-registrarse">Registrarse</button>
+    </div>
+</nav>
+
 
     <!-- Contenido principal -->
     <div class="content">

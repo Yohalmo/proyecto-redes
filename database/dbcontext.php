@@ -6,8 +6,8 @@ class DBContext{
 
     protected $conexion;
     private $usuario = 'root';
-    private $password = '';
-    private $dbname = 'proyecto_redes';
+    private $password = 'Ngarzona11';
+    private $dbname = 'casino';
     private $host = 'localhost';
     protected $query;
     private $table;
