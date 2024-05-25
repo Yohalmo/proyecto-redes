@@ -33,21 +33,21 @@
                 <button class="sign-up-btn">Iniciar Sesión</button>
             </div>
         </div>
-        <form class="formulario">
+        <form class="formulario" id="FormRegistro">
             <h2 class="create-account">Crear una cuenta</h2>
             <p class="cuenta-gratis"> Rellena tus datos</p>
-            <input type="text" placeholder="Nombre">
-            <input type="text" placeholder="Apellido">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Contraseña">
+            <input type="text" placeholder="Nombre" required name="nombre">
+            <!-- <input type="text" placeholder="Apellido" required> -->
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="password" placeholder="Contraseña" required name="password">
             <div class="terms">
                 <div>
-                <input type="checkbox" id="terms" name="terms">
+                <input type="checkbox" id="terms" name="terms" required>
             </div>
                 <a href="#" class="Terminos">Términos y condiciones</a>
             </div>
             
-            <input type="button" value="Registrarse">
+            <input type="button" value="Registrarse" onclick="registrarse()">
         </form>
     </div>
     <div class="container-form sign-in">
@@ -65,9 +65,9 @@
                 </div>
             </div>
             <p class="cuenta-gratis">¿Aún no tienes una cuenta?</p>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Contraseña">
-            <input type="button" value="Iniciar Sesión">
+            <input type="email" placeholder="Email" name="email" id="email">
+            <input type="password" placeholder="Contraseña" name="password" id="password">
+            <input type="button" value="Iniciar Sesión" onclick="login()">
             <div class="options">
                 <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 <a href="#" class="forgot-username">¿Olvidaste tu usuario?</a>
@@ -77,7 +77,7 @@
             <div class="message">
                 <h2>Bienvenido de nuevo</h2>
                 <p>Si aún no tienes una cuenta por favor regístrate aquí</p>
-                <button class="sign-in-btn">Registrarse</button>
+                <button class="sign-in-btn" type="button">Registrarse</button>
             </div>
         </div>
     </div>
@@ -85,6 +85,7 @@
         <p>Derechos reservados Palms 2024 &copy;</p>
         <img src="images/logo_marca_registrada.png" alt="">
     </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
 

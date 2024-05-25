@@ -8,5 +8,6 @@ $routes = [
     'pagina-principal' => ['GameController', 'main_page'],
     'ruleta' => ['GameController', 'ruleta'],
     'actualizar-ranking' => ['GameController', 'get_ranking'],
+    'guardar-juego' => ['GameController', 'save_game'],
 
 ];

@@ -15,19 +15,10 @@ class Controller extends DBContext{
 
     protected function get_session($campo){
         $info = $_SESSION[$campo] ?? '';
-
-        if(is_array($info) || is_object($info)){
-            $info = unserialize(${'info'});
-        }
-
-        return $info;
+        return unserialize($info);
     }
 
     protected function put_session($campo, $datos){
-        if(is_array($datos) || is_object($datos)){
-            $datos = serialize($datos);
-        }
-
         $_SESSION[$campo] = serialize($datos);
     }
     
@@ -37,6 +28,8 @@ class Controller extends DBContext{
                 return false;
             }
         }
+
+        return true;
     }
     
     protected function response_message($datos, $code = 200){

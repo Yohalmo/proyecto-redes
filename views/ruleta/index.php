@@ -52,8 +52,8 @@
                 <?php if(!isset($infoUser->usuario_id)){ ?>
                     <a class="btn-iniciosesion" href="home"><strong>Iniciar sesión</strong></a>
                 <?php }else{ ?>
-                    <a class="btn-iniciosesion" href="home"><strong>Apostado: $ <span id="lblApostado">0.00</span></strong></a>
-                    <div class="btn-dinero ms-3"><strong>Dinero: $ 1,000</strong></div>
+                    <div class="btn-iniciosesion"><strong>Apostado: $ <span id="lblApostado">0.00</span></strong></div>
+                    <div class="btn-dinero ms-3"><strong>Dinero: $ <span id="money"><?= number_format($infoUser->usuario_dinero ?? 0) ?></span></strong></div>
                 <?php } ?>
             </div>
         </div>
@@ -126,6 +126,7 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="js/game.js"></script>
     <script>
+        set_intentos(<?= $infoUser->usuario_jugadas ?? 0 ?>);
         set_money(<?= $infoUser->usuario_dinero ?? 0 ?>);
     </script>
 </body>

@@ -1,0 +1,6 @@
+<?php
+
+define('dbuser', '');
+define('dbpassword', '');
+define('dbname', '');
+define('dbhost', '');

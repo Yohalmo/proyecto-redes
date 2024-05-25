@@ -2,6 +2,7 @@
 
 include '../routes/route.php';
 include '../config/Request.php';
+include '../database/conexion.php';
 include '../database/dbcontext.php';
 include '../controllers/Controller.php';
 

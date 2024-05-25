@@ -7,12 +7,11 @@ class UserController extends Controller{
     }
 
     public function login(Request $request){
-
         if($this->validate_inputs(['email', 'password'], $request)){
 
             $result = $this->table('usuarios')->where('usuario_email', $request->email)->first();
         
-            if(password_verify($request->password, $result->usuario_password)){
+            if(isset($result->usuario_id) && password_verify($request->password, $result->usuario_password)){
                 $this->put_session('user-info', $result);
                 $this->response_message(['message' => 'Login correcto']);
             }

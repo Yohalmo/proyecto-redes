@@ -15,6 +15,7 @@ let moverFicha = false;
 const ficha = document.getElementById('fichaMove');
 var audio;
 let dinero = 0;
+let jugadas = 0;
 
 //cambiar color de fondo cuando el mouse pasa sobre una ficha
 $('body').on('mouseenter mouseleave', '.row-items td.unselected', function() {
@@ -81,6 +82,10 @@ function set_money(money){
     dinero = money;
 }
 
+function set_intentos(games){
+    jugadas = games;
+}
+
 function UnSelectedCoin(){
     $('.img-ficha').find('img').removeClass('selected-ficha');
     currentCoin = 0;
@@ -89,7 +94,7 @@ function UnSelectedCoin(){
 }
 
 function SumarFichas(item, classAffected) {
-    if(currentCoin == 0 || (apostado + currentCoin) > dinero){ return; }
+    if(currentCoin == 0 || (parseInt(apostado) + currentCoin) > dinero || jugadas > 4){ return; }
 
     let quantity = currentCoin;
 
@@ -175,6 +180,7 @@ function GameEnded(){
     $('td .divficha').html('');
     $('#contenedor-ruleta').addClass('d-none'); 
     $('#message').html('Sin premio');
+    $('#lblApostado').html('0.00');
 }
 
 function getGanador() {
@@ -203,10 +209,28 @@ function getGanador() {
         }
     });
 
+    let ganancia = 0;
+
     if(seleccionados.includes(numeroGanador)){
-        $('#message').html('Ha ganado<br>' + (apostado * (37 - seleccionados.length)));
+        ganancia = (apostado * (37 - seleccionados.length));
+        dinero += ganancia;
+        $('#message').html('Ha ganado<br>' + ganancia);
+    }else{
+        dinero -= apostado;
     }
+
     $('#contentResult').removeClass('d-none');
+    $('#money').html(dinero);
+    
+    $.post("guardar-juego",
+    {
+        apostado, ganancia
+    },
+    function (data) {
+        jugadas = parseInt(data.intentos_restantes);
+    }).fail(function(response) {
+    });
+
     apostado = 0;
 }
 

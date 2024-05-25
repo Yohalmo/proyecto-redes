@@ -5,10 +5,6 @@ $conexion = new DBContext();
 class DBContext{
 
     protected $conexion;
-    private $usuario = 'root';
-    private $password = 'Ngarzona11';
-    private $dbname = 'casino';
-    private $host = 'localhost';
     protected $query;
     private $table;
     private $fields = '*';
@@ -18,7 +14,8 @@ class DBContext{
     private $group = [];
 
     public function __construct() {
-        $this->conexion = new PDO("mysql:host=$this->host;dbname=$this->dbname", $this->usuario, $this->password);
+        
+        $this->conexion = new PDO("mysql:host=". dbhost .";dbname=" . dbname, dbuser, dbpassword);
         $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     
