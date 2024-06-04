@@ -57,7 +57,7 @@
                     <img src="images/balck jack.jpg" alt="Juego 3">
                     <h3>Juego 3</h3>
                     <p>Descripción breve del juego.</p>
-                    <button class="button">Jugar</button>
+                    <a class="button" href="cartas">Jugar</a>
                 </div>
             </div>
         </div>

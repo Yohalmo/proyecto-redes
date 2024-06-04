@@ -44,3 +44,17 @@ body{
     width: 70% !important;
     margin-left: 29%;
 }
+
+.winner{
+    background: radial-gradient(circle, #fcdbc5, #811818) !important;
+    color: rgb(0, 0, 0);
+}
+@media screen and (max-width: 810px) {
+    .cartas{
+        margin-left: 48%;
+    }
+
+    .hiddenCard{
+        transform: rotate(90deg);
+    }
+}

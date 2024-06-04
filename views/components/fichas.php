@@ -1,4 +1,4 @@
-<div id="divfichas" class="d-flex justify-content-between p-0 m-0">
+<div id="divfichas" class="d-flex justify-content-between col-12 p-0 m-0 position-absolute">
     <div id="container-fichas" class="d-flex p-2 ps-5 bg-white">
         <div class="col-auto">
             <div class="img-ficha">

@@ -6,8 +6,6 @@ let speed;
 let continuar;
 let time;
 let seleccionados;
-let currentCoin = 0;
-let apostado = 0;
 let labelsWin = { 'menor' : 'Bajos', 'mayor' : 'Altos', 'par': 'Pares', 'impar' : 'Impares', 'cero' : 'Cero' };
 let coinslist = [100, 50, 20, 10, 5, 1];
 let useCoin;
@@ -75,13 +73,6 @@ $('body').on('click', '.img-ficha', function(){
         $('#fichaMove').removeClass('d-none');
     }
 });
-
-function UnSelectedCoin(){
-    $('.img-ficha').find('img').removeClass('selected-ficha');
-    currentCoin = 0;
-    moverFicha = false;
-    $('#fichaMove').addClass('d-none');
-}
 
 function SumarFichas(item, classAffected) {
     if(currentCoin == 0 || (parseInt(apostado) + currentCoin) > dinero || jugadas > 4){ return; }

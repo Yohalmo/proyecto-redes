@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruleta</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/game.css?version=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/game.css?v=1">
+    <link rel="stylesheet" href="css/main.css?v=1">
 </head>
 
 <body>
@@ -20,9 +20,9 @@
         <img src="images/fichas.png" alt="" srcset="" height="100" class="position-absolute" style="margin-top: 60vh;margin-left: 70vw;">
         <img src="images/fichas.png" alt="" srcset="" height="100" class="position-absolute" style="margin-top: 70vh;margin-left: 80vw;">
 
-        <?php include __DIR__. '/../components/players.php'; ?>
         
         <div class="absolute-container">
+            <?php include __DIR__. '/../components/players.php'; ?>
             <?php include __DIR__. '/../components/content-money.php'; ?>
 
             <div class="main-container">
@@ -51,8 +51,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="js/index.js"></script>
-    <script src="js/game.js?v=1.2"></script>
+    <script src="js/index.js?v=1"></script>
+    <script src="js/game.js?v=1"></script>
 
     <script>
         set_intentos(<?= $infoUser->usuario_jugadas ?? 0 ?>);

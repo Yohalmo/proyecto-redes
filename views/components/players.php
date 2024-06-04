@@ -1,4 +1,4 @@
-<div class="card" id="lstPlayers">
+<div class="card goodScroll" id="lstPlayers">
     <div class="card-body">
         <div class="text-center" style="background-color: white; border-radius: 50px; opacity:0.9">
             <strong class="text-center" style="color: #0e0827;">Mejores jugadores</strong>

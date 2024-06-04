@@ -1,6 +1,15 @@
 
 var dinero = 0;
 var jugadas = 0;
+let currentCoin = 0;
+let apostado = 0;
+
+function UnSelectedCoin(){
+    $('.img-ficha').find('img').removeClass('selected-ficha');
+    currentCoin = 0;
+    moverFicha = false;
+    $('#fichaMove').addClass('d-none');
+}
 
 function set_money(money){
     dinero = money;
