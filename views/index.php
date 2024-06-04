@@ -27,7 +27,7 @@
 
     <div class="container-form sign-up">
         <div class="welcome-back">
-            <div class="message">
+            <div class="message" style="background-color:white; color:black; border-radius: 10px">
                 <h2>Inicio de Sesión</h2>
                 <p>Si ya tienes una cuenta por favor inicia sesión aquí</p>
                 <button class="sign-up-btn">Iniciar Sesión</button>
@@ -74,7 +74,7 @@
             </div>
         </form>
         <div class="welcome-back">
-            <div class="message">
+            <div class="message" style="background-color:white; color:black; border-radius: 10px">
                 <h2>Bienvenido de nuevo</h2>
                 <p>Si aún no tienes una cuenta por favor regístrate aquí</p>
                 <button class="sign-in-btn" type="button">Registrarse</button>
