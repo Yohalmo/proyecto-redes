@@ -1,4 +1,6 @@
 <?php
+namespace Config;
+use \stdClass;
 
 class Request extends stdClass{
 

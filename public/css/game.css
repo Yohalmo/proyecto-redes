@@ -2,26 +2,12 @@
 
 body {
     color: white;
-    background-image: url("images/fondo.jpg");
-  background-color: #121212;
-  background: radial-gradient(circle at 100px 100px, #091018, #0e192d) !important;
+    background: radial-gradient(circle at 100px 100px, #091018, #0e192d) !important;
     min-height: 100vh;
     width: 100%;
     padding: 0;
     margin: 0;
     position: relative;
-}
-
-.body{
-    min-height: 100vh;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-}
-
-.players{
-    background: radial-gradient(circle, #2d2e31, #040d16) !important;
 }
 
 .bgbody{
@@ -93,11 +79,6 @@ td {
     margin-top: 15px;
     margin-bottom: 30px;
     display: flex;
-}
-
-.absolute-container {
-    position: absolute;
-    width: 100%;
 }
 
 .circle-number {
@@ -269,13 +250,6 @@ td.bg-green.hover .bgtd {
     user-select: none;
 }
 
-#container-fichas{
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 50px;
-    border: 3px solid #fafafa10;
-    background: radial-gradient(circle, #924747, #2d0e0e) !important;
-    width: 700px;
-}
 
 .img-ficha{
     background: radial-gradient(circle, #865959, #302f2f) !important;
@@ -284,12 +258,6 @@ td.bg-green.hover .bgtd {
     height: 90px;
     width: 90px;
 }
-
-.selected-ficha{
-    margin-top: -25px;
-    transform: scale(1.17);
-}
-
 
 .ruleta {
     height: 85vh;
@@ -313,67 +281,9 @@ td.bg-green.hover .bgtd {
     }
 }
 
-#lstPlayers{
-    display: none;
-}
-
-@media screen and (min-width: 920px) {
-    table{
-        width: 70% !important;
-        margin-left: 29%;
-    }
-
-    #lstPlayers{
-        width: 23%;
-        margin-left: 3%;
-        position: absolute;
-        margin-top: 50px;
-        height: 85vh;
-        background: #fafafa10;
-        border-radius: 20px;
-        border: 3px solid #fafafa10;
-        backdrop-filter: blur(0.4rem);
-        -webkit-backdrop-filter: blur(0.4rem);
-        display: block;
-    }
-}
-
-@media screen and (max-width: 810px) {
-    .body{
-        transform: rotate(90deg);
-        width: 100vh;
-    }
-
-    #divfichas{
-        width: 100vh;
-    }
-
-    .divrotar {
-        width: 20%;
-    }
-
-    .tdfooter {
-        height: 100px !important;
-        font-size: 25px;
-    }
-
-    tr, tbody{
-        width: 100vh !important;
-    }
-    
-    td {
-        height: 70px !important;
-        width: 70px !important;
-    }
-    
-    .td {
-        height: 70px !important;
-        width: 70px !important;
-    }
-
-    .main-container, .main-container table, #divfichas {
-        width: 175vh;
-    }
+table{
+    width: 70% !important;
+    margin-left: 29%;
 }
 
 .ruleta-numbers {

@@ -1,10 +1,10 @@
 <?php
 
+include '../config/autoload.php';
 include '../routes/route.php';
-include '../config/Request.php';
 include '../database/conexion.php';
-include '../database/dbcontext.php';
-include '../controllers/Controller.php';
+
+use Config\Request;
 
 $ruta = $_SERVER['REQUEST_URI'];
 $datos = explode('?', $ruta)[0] ?? [''];
@@ -44,8 +44,6 @@ if(!count($instancia)){
     die();
 }
 
-include "../controllers/{$instancia[0]}.php";
-
 $request = new Request();
 $class = new $instancia[0]();
 
@@ -63,4 +61,4 @@ foreach ($params as $param) {
     }
 }
 
-call_user_func_array(array($class, $instancia[1]), $parametros);
+echo call_user_func_array(array($class, $instancia[1]), $parametros);

@@ -1,6 +1,6 @@
 <?php 
-
-$conexion = new DBContext();
+namespace Database;
+use \PDO;
 
 class DBContext{
 
@@ -17,6 +17,14 @@ class DBContext{
         
         $this->conexion = new PDO("mysql:host=". dbhost .";dbname=" . dbname, dbuser, dbpassword);
         $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+
+    protected function query_row(){
+        return $this->query->fetch(PDO::FETCH_OBJ);
+    }
+
+    protected function query_result(){
+        return $this->query->fetchAll(PDO::FETCH_OBJ);
     }
     
     protected function make_query($sql, $datos = []){

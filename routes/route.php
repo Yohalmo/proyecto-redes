@@ -1,13 +1,21 @@
 <?php
+namespace routes;
+
+use controllers\GameController;
+use controllers\UserController;
+
 $routes = [
 
-    '' => ['GameController', 'index'],
-    'home' => ['GameController', 'index'],
-    'login-usuario' => ['UserController', 'login'],
-    'registro-de-usuario' => ['UserController', 'add_user'],
-    'pagina-principal' => ['GameController', 'main_page'],
-    'ruleta' => ['GameController', 'ruleta'],
-    'actualizar-ranking' => ['GameController', 'get_ranking'],
-    'guardar-juego' => ['GameController', 'save_game'],
+    '' => [GameController::class, 'index'],
+    'home' => [GameController::class, 'index'],
+    'login-usuario' => [UserController::class, 'login'],
+    'registro-de-usuario' => [UserController::class, 'add_user'],
+    'cerrar-session' => [UserController::class, 'cerrar_session'],
+    'pagina-principal' => [GameController::class, 'main_page'],
+    'ruleta' => [GameController::class, 'ruleta'],
+    'cartas' => [GameController::class, 'cartas'],
+    'traga-monedas' => [GameController::class, 'traga_monedas'],
+    'actualizar-ranking' => [GameController::class, 'get_ranking'],
+    'guardar-juego' => [GameController::class, 'save_game'],
 
 ];

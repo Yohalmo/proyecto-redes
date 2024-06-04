@@ -1,4 +1,7 @@
 <?php
+namespace Controllers;
+
+use Config\Request;
 
 class GameController extends Controller{
 
@@ -6,12 +9,28 @@ class GameController extends Controller{
         parent::__construct();
     }
 
+    public function cartas(){
+        $infoUser = $this->get_session('user-info');
+
+        if(isset($infoUser->usuario_id)){
+            $infoUser = $this->table('usuarios')->where('usuario_id', $infoUser->usuario_id)->first();
+        }
+
+        return $this->view('cartas.index', compact('infoUser'));
+    }
+
     public function index(){
-        $this->view('index');
+        $infoUser = $this->get_session('user-info');
+
+        if(isset($infoUser->usuario_id)){
+            header('Location: pagina-principal');
+            die();
+        }
+
+        return $this->view('index');
     }
 
     public function ruleta(){
-        $ranking = $this->ranking_info();
         $infoUser = $this->get_session('user-info');
 
         if(isset($infoUser->usuario_id)){
@@ -25,11 +44,16 @@ class GameController extends Controller{
         shuffle($numeros);
         $red = $black = [];
 
-        $this->view('ruleta.index', compact('ranking', 'infoUser', 'numeros', 'colores', 'grupos', 'red', 'black'));
+        return $this->view('ruleta.index', 
+        compact('infoUser', 'numeros', 'colores', 'grupos', 'red', 'black'));
+    }
+
+    public function traga_monedas(){
+        return $this->view('tragamonedas.index');
     }
 
     public function main_page(){
-        $this->view('Principal');
+        return $this->view('Principal');
     }
 
     public function get_ranking(){
@@ -52,7 +76,7 @@ class GameController extends Controller{
         $this->make_query('call save_game(:id, :apuesta, :ganancia)', 
         [':id' => $usuario->usuario_id, ':apuesta' => $request->apostado, ':ganancia' => $request->ganancia]);
 
-        $response = $this->query->fetch(PDO::FETCH_OBJ);
+        $response = $this->query_row();
         $usuario->usuario_jugadas = $response->usuario_jugadas;
         $usuario->usuario_dinero = $response->usuario_dinero;
         $this->put_session('user-info', $usuario);

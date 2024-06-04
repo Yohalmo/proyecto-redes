@@ -1,4 +1,6 @@
 <?php
+namespace Controllers;
+use Database\DBContext;
 
 class Controller extends DBContext{
     
@@ -9,8 +11,9 @@ class Controller extends DBContext{
 
     protected function view($vista, $datos = []){
         extract($datos);
+        ob_start();
         include ('../views/' . str_replace('.', '/', $vista) . '.php');
-        die();
+        return ob_get_clean();
     }
 
     protected function get_session($campo){

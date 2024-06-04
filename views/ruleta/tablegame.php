@@ -7,7 +7,7 @@
                     <td rowspan="3" class="bg-green border-0 unselected ficha-item cero">
                         <div class="bgtd"></div>
                         <div class="square-number">
-                            <strong class="absolute-class" id="contenedor0">0</strong>
+                            <strong class="absolute-class numero" id="contenedor0">0</strong>
                             <div class="divficha"></div>
                         </div>
                     </td>
@@ -42,19 +42,19 @@
             <td class="border-0"></td>
             <td colspan="4" class="tdfooter grupos" classItem="primeros">
                 <div class="divrotar relativetableItems">
-                    <div class="absolute-class">1° doce</div>
+                    <div class="absolute-class multi-option">1° doce</div>
                     <div class="divficha"></div>
                 </div>
             </td>
             <td colspan="4" class="tdfooter grupos" classItem="segundos">
                 <div class="divrotar relativetableItems">
-                    <div class="absolute-class">2° doce</div>
+                    <div class="absolute-class multi-option">2° doce</div>
                     <div class="divficha"></div>
                 </div>
             </td>
             <td colspan="4" class="tdfooter grupos" classItem="terceros">
                 <div class="divrotar relativetableItems">
-                    <div class="absolute-class">3° doce</div>
+                    <div class="absolute-class multi-option">3° doce</div>
                     <div class="divficha"></div>
                 </div>
             </td>
@@ -63,7 +63,7 @@
             <td class="border-0"></td>
             <td colspan="2" class="tdfooter rango" classItem="menor">
                 <div class="divrotar relativetableItems">
-                    <div class="absolute-class">1-18</div>
+                    <div class="absolute-class multi-option">1-18</div>
                     <div class="divficha"></div>
                 </div>
             </td>
@@ -91,7 +91,7 @@
             </td>
             <td colspan="2" class="tdfooter rango" classItem="mayor">
                 <div class="divrotar relativetableItems">
-                    <div class="absolute-class">19-36</div>
+                    <div class="absolute-class multi-option">19-36</div>
                     <div class="divficha"></div>
                 </div>
             </td>

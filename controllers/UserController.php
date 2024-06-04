@@ -1,4 +1,8 @@
 <?php
+namespace Controllers;
+
+use Config\Request;
+use Helpers\Mailable;
 
 class UserController extends Controller{
 
@@ -22,6 +26,11 @@ class UserController extends Controller{
         $this->response_message(['message' => 'Debe de llenar el correo y la contraseña'], 500);
     }
 
+    public function cerrar_session(){
+        $this->put_session('user-info', null);
+        header('Location: home');
+    }
+
     public function add_user(Request $request){
         
         if($this->validate_inputs(['nombre', 'email', 'password'], $request)){
@@ -41,6 +50,8 @@ class UserController extends Controller{
                 'usuario_password' => $password
             ]);
     
+            $contenido = $this->view('mails.registro', compact('request'));
+            Mailable::to('yohalmoavg@gmail.com')->subject('Registro de usuario')->send($contenido);
             $this->response_message(['message' => 'Usuario creado exitosamente']);
         }
 

@@ -4,3 +4,10 @@ define('dbuser', '');
 define('dbpassword', '');
 define('dbname', '');
 define('dbhost', '');
+
+define('hostSMTP','');
+define('portSMTP','');
+define('userSMTP','');
+define('passwordSMTP','');
+define('fromUser','');
+define('mailName','');

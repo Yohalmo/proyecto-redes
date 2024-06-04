@@ -14,8 +14,6 @@ let useCoin;
 let moverFicha = false;
 const ficha = document.getElementById('fichaMove');
 var audio;
-let dinero = 0;
-let jugadas = 0;
 
 //cambiar color de fondo cuando el mouse pasa sobre una ficha
 $('body').on('mouseenter mouseleave', '.row-items td.unselected', function() {
@@ -78,14 +76,6 @@ $('body').on('click', '.img-ficha', function(){
     }
 });
 
-function set_money(money){
-    dinero = money;
-}
-
-function set_intentos(games){
-    jugadas = games;
-}
-
 function UnSelectedCoin(){
     $('.img-ficha').find('img').removeClass('selected-ficha');
     currentCoin = 0;
@@ -122,6 +112,8 @@ function SumarFichas(item, classAffected) {
 }
 
 function StartGame() {
+    if(apostado < 1){ return; }
+
     UnSelectedCoin();
     seleccionados = [];
 
@@ -140,7 +132,6 @@ function StartGame() {
     }, 1000);
 
     setTimeout(() => {
-
         $('.ruleta').addClass('rotar-ruleta');
         var ruletaNumbersElement = document.querySelector('.ruleta-numbers');
         continuar = true;
@@ -152,8 +143,7 @@ function StartGame() {
         time = Math.floor(Math.random() * 15) + 1;
 
         var intervalID = setInterval(SetSpeed, time * 1000);
-        
-        
+    
         setTimeout(() => {
             speed = 0;
             clearInterval(intervalID);
@@ -173,6 +163,11 @@ function StartGame() {
 }
 
 function GameEnded(){
+
+    seleccionados.forEach(function(item){
+        $('.numeroItem' + item).addClass('ruletaNumber')
+    });
+
     $('td.bg-black, td.bg-red').removeClass('hover');
     $('td.bg-black, td.bg-red').addClass('unselected');
     $('.wheel .ruletaNumber').css('--opacity', 1);
@@ -274,7 +269,7 @@ function adjustContainer() {
     }else{
         elemento.offset({
             top: 0,
-            right: 0
+            left: 0
         })
     }   
 }

@@ -1,0 +1,140 @@
+.absolute-container {
+    position: absolute;
+    width: 100%;
+}
+
+.selected-ficha{
+    margin-top: -25px;
+    transform: scale(1.17);
+}
+
+.players{
+    background: radial-gradient(circle, #2d2e31, #040d16) !important;
+}
+
+.body{
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+}
+
+.main-container {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    display: flex;
+}
+
+.btn-iniciosesion{
+    padding: 8px 30px;
+    background: radial-gradient(circle, #064cce, #192947) !important;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 20px;
+    border: 1px solid white;
+}
+
+.btn-dinero{
+    padding: 8px 30px;
+    background: radial-gradient(circle, #06ce06, #0f310c) !important;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 20px;
+    border: 1px solid #1c4718;
+}
+
+.btn-iniciosesion:hover{
+    color: white;
+}
+
+#lstPlayers::-webkit-scrollbar {
+    width: 6px;
+}
+
+#lstPlayers::-webkit-scrollbar-track {
+    background: #e0e0e0;
+}
+
+#lstPlayers::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 15px;
+    border: 3px solid #e0e0e0;
+}
+
+#lstPlayers::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+#lstPlayers{
+    width: 23%;
+    margin-left: 3%;
+    position: absolute;
+    margin-top: 50px;
+    height: 85vh;
+    background: #fafafa10;
+    border-radius: 20px;
+    border: 3px solid #fafafa10;
+    backdrop-filter: blur(0.4rem);
+    -webkit-backdrop-filter: blur(0.4rem);
+    display: block;
+    overflow-y: scroll;
+}
+
+#container-fichas{
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border: 3px solid #fafafa10;
+    background: radial-gradient(circle, #924747, #2d0e0e) !important;
+    width: 700px;
+}
+
+@media screen and (max-width: 810px) {
+    body{
+        background: radial-gradient(circle, #091018, #0e192d) !important;
+    }
+
+    .body{
+        transform: rotate(90deg);
+        width: 100vh;
+    }
+    
+    #lstPlayers{
+        width: 43%;
+        margin-left: 3%;
+    }
+
+    #divfichas{
+        width: 100vh;
+    }
+
+    .divrotar {
+        width: 20%;
+    }
+
+    .tdfooter {
+        height: 100px !important;
+        font-size: 25px;
+    }
+
+    tr, tbody{
+        width: 100vh !important;
+    }
+    
+    td, .tdfooter, .td {
+        height: 70px !important;
+        width: 70px !important;
+    }
+
+    .main-container, .main-container table, #divfichas, .absolute-container,
+    #content-money, #contenedor-ruleta, .container-ruleta {
+        width: 175vh;
+    }
+
+    .multi-option{
+        width: 100px;
+    }
+}

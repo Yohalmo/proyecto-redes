@@ -1,5 +1,5 @@
 <div class="row col-12 p-0 m-0 container-ruleta">
-    <div class="col-xl-7 col-md-8 col-sm-12">
+    <div class="col-7">
         <div class="d-flex justify-content-center">
             <div class="ruleta">
                 <div class="ruleta-numbers">
@@ -40,8 +40,8 @@
         </div>
     </div>
 
-    <div class="col-xl-5 col-md-4 col-sm-12 d-flex justify-content-center align-items-center d-none"
-    id="contentResult">
+    <div class="col-5 d-flex justify-content-center align-items-center d-none"
+            id="contentResult">
         <div class="result">
             <div class="text-center mt-1">
                 <strong>

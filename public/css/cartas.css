@@ -1,0 +1,46 @@
+
+body{
+    background: radial-gradient(circle at 100px 100px, #092413, #03180b) !important;
+    background-color: #04180c;
+    min-height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.contenedor{
+    height: 100vh;
+}
+
+.user-name{
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: auto;
+    padding: 10px 20px ;
+    width: auto;
+}
+
+.btn-play{
+    padding: 10px 60px !important;
+    border-radius: 30px;
+}
+
+.score{
+    padding: 10px 30px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.apostado{
+    padding: 10px 30px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+
+.cartas{
+    width: 70% !important;
+    margin-left: 29%;
+}
