@@ -19,6 +19,17 @@ function set_intentos(games){
     jugadas = games;
 }
 
+function guardar_jugada(ganancia){
+    $.post("guardar-juego",
+    {
+        apostado, ganancia
+    },
+    function (data) {
+        jugadas = parseInt(data.intentos_restantes);
+    }).fail(function(response) {
+    });
+}
+
 function actualizar_ranking(){
     $.get("actualizar-ranking", function (data) {
         

@@ -208,14 +208,7 @@ function getGanador() {
     $('#contentResult').removeClass('d-none');
     $('#money').html(dinero);
     
-    $.post("guardar-juego",
-    {
-        apostado, ganancia
-    },
-    function (data) {
-        jugadas = parseInt(data.intentos_restantes);
-    }).fail(function(response) {
-    });
+    guardar_jugada(ganancia);
 
     apostado = 0;
 }

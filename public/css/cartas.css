@@ -51,7 +51,7 @@ body{
 }
 @media screen and (max-width: 810px) {
     .cartas{
-        margin-left: 48%;
+        margin-left: 25%;
     }
 
     .hiddenCard{

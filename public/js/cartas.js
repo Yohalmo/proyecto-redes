@@ -33,11 +33,53 @@ $('body').on('click', '.img-ficha', function () {
 });
 
 function apostar(){
+    let currentMoney = parseFloat($('#money').html().replace(',', ''));
+
+    if(apostado + currentCoin > currentMoney){
+        Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Dinero insuficiente",
+            showConfirmButton: false,
+            timer: 1500,
+            toast: true,
+            timerProgressBar: true,
+        })
+        return;
+    }
+
     apostado += currentCoin;
     $('#lblApostado').html(apostado);
 }
 
 async function start_game() {
+
+    if(jugadas > 4){
+        Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Se ha realizado la cantidad máxima de juegos permitidos",
+            showConfirmButton: false,
+            timer: 1500,
+            toast: true,
+            timerProgressBar: true,
+        })
+        return;
+    }
+
+    if(apostado == 0){
+        Swal.fire({
+            position: "top-end",
+            icon: "error",
+            title: "Debes colocar una apuesta inicial",
+            showConfirmButton: false,
+            timer: 1500,
+            toast: true,
+            timerProgressBar: true,
+        })
+        return;
+    }
+
     barajar(cartas);
     cartasHome = [];
     scoreHome = 0;
@@ -110,10 +152,25 @@ async function puntaje_home() {
     }
     set_score(scoreHome, false);
     let scorePlayer = parseInt($('#scorePlayer').html());
+    let ganancia = scorePlayer > 21 || scorePlayer <= scoreHome ? 0 : apostado * 2;
 
-    $('#moneyMade').html(scorePlayer > 21 || scorePlayer < scoreHome ? 0 : apostado * 2);
-    $('.winner').removeClass('d-none');
-    $('#btnPlay').removeClass('d-none');
+    let currentMoney = parseFloat($('#money').html().replace(',', ''));
+
+    if(ganancia == 0){
+        currentMoney -= apostado;
+    }else{
+        currentMoney += ganancia;
+    }
+
+    $('#money').html(currentMoney);
+    $('#moneyMade').html(ganancia);
+
+    $('#btnPlay, #btnApostar, .winner').removeClass('d-none');
+
+    guardar_jugada(ganancia);
+    $('#lblApostado').html('0.00');
+    
+    apostado = 0;
 }
 
 function move() {
