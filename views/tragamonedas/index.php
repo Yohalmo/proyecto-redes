@@ -47,6 +47,7 @@
     </style>
 </head>
 <body>
+    <h1>Modificacion</h1>  
     <div class="contenedor">
         <h1>Tragamonedas</h1>
         <div class="maquinas">
