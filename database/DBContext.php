@@ -15,7 +15,7 @@ class DBContext{
 
     public function __construct() {
         
-        $this->conexion = new PDO("mysql:host=". dbhost .";dbname=" . dbname, dbuser, dbpassword);
+        $this->conexion = new PDO("mysql:host=". dbhost .";port=" . puerto .  ";dbname=" . dbname, dbuser, dbpassword);
         $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 

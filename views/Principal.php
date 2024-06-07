@@ -36,7 +36,7 @@
                     </button>
                     
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
-                    style="margin-top: 110px; margin-left: -20px">
+                    style="margin-top: 110px; margin-left: -90px">
                     <a class="dropdown-item" href="cerrar-session">Cerrar sesión</a>
                 </div>
             </div>

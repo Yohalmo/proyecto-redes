@@ -10,7 +10,7 @@
 
     <div style="max-width: 600px; margin: 0 auto; background-color: #f4f4f4; padding: 20px; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
         <h2 style="color: #333;">¡Bienvenido!</h2>
-        <p>Estimado Usuario <?= $request->nombre ?>,</p>
+        <p>Estimado Usuario <?= $request->nombre ?? '' ?>,</p>
         <p>Te damos la bienvenida a nuestra plataforma. Tu registro ha sido exitoso.</p>
         <p>Por favor, confirma tu dirección de correo electrónico haciendo clic en el siguiente enlace:</p>
         <p><a href="https://www.ejemplo.com/confirmar-correo" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 3px;">Confirmar Correo</a></p>

@@ -34,7 +34,7 @@ class UserController extends Controller{
     public function add_user(Request $request){
         
         if($this->validate_inputs(['nombre', 'email', 'password'], $request)){
-
+            
             $info = $this->table('usuarios')->where('usuario_email', $request->email)
             ->first(['count(*) as total']);
     
@@ -51,10 +51,10 @@ class UserController extends Controller{
             ]);
     
             $contenido = $this->view('mails.registro', compact('request'));
-            Mailable::to('yohalmoavg@gmail.com')->subject('Registro de usuario')->send($contenido);
+            Mailable::to($request->email)->subject('Registro de usuario')->send($contenido);
             $this->response_message(['message' => 'Usuario creado exitosamente']);
         }
 
-        $this->response_message(['message' => 'Debe llenar todos los campos del formulario']);
+        $this->response_message(['message' => 'Debe llenar todos los campos del formulario'], 500);
     }
 }

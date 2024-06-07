@@ -9,7 +9,7 @@
                 <div class="btn-iniciosesion"><strong>Apostado: $ <span id="lblApostado">0.00</span></strong></div>
                 <div class="btn-dinero ms-3"><strong>Dinero: $ <span id="money"><?= number_format($infoUser->usuario_dinero ?? 0) ?></span></strong></div>
                 
-                <div class="d-flex jusfify-content-end align-items-center dropdown ms-3">
+                <div class="d-flex jusfify-content-end align-items-center dropdown me-4">
                         <strong class="text-white"><?= $infoUser->usuario_nombre ?></strong>
                         <button class="ms-3 rounded-circle bg-white d-flex justify-content-center align-items-center text-black" 
                             style="height: 50px; width:50px"
@@ -18,7 +18,7 @@
                         </button>
                         
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"
-                        style="margin-left: -70px">
+                        style="margin-left: -100px">
                         <a class="dropdown-item" href="cerrar-session">Cerrar sesión</a>
                     </div>
                 </div>

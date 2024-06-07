@@ -13,6 +13,9 @@ document.addEventListener('click', e => {
 
 function login() {
 
+    $('#loadSesion').removeClass('d-none');
+    $('#btnSession').addClass('d-none');
+
     $.post("login-usuario",
         {
             email: $('#email').val(),
@@ -31,7 +34,7 @@ function login() {
 
             setTimeout(() => {
                 location.replace('pagina-principal');
-            }, 2800);
+            }, 2000);
         }).fail(function (response) {
             Swal.fire({
                 position: "top-end",
@@ -42,11 +45,16 @@ function login() {
                 toast: true,
                 timerProgressBar: true,
             });
+            $('#loadSesion').addClass('d-none');
+            $('#btnSession').removeClass('d-none');     
         });
 }
 
 function registrarse(){
     var Form = new FormData($('#FormRegistro')[0]);
+    
+    $('#btnRegistro').addClass('d-none');
+    $('#loadRegistro').removeClass('d-none');
 
     $.ajax({
         url: 'registro-de-usuario',
@@ -55,9 +63,31 @@ function registrarse(){
         contentType: false,
         type: 'POST',
         success: function(data){
-          alert(data.message);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: data.message,
+                showConfirmButton: false,
+                timer: 1500,
+                toast: true,
+                timerProgressBar: true,
+            });
+            
+            $('#loadRegistro').addClass('d-none');
+            $('#btnRegistro').removeClass('d-none');
         }, error: function(error){
-            alert(error.responseJSON.message);
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: error.responseJSON.message,
+                showConfirmButton: false,
+                timer: 1500,
+                toast: true,
+                timerProgressBar: true,
+            });
+            
+            $('#loadRegistro').addClass('d-none');
+            $('#btnRegistro').removeClass('d-none');
         }
     });
 }

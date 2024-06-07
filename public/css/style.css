@@ -67,7 +67,7 @@ body {
 }
 
 .create-account {
-    padding: 2.7rem 0;
+    padding: 2.7rem 0 2rem 0;
     font-size: 1.7rem;
 }
 
@@ -97,7 +97,7 @@ body {
 }
 
 .cuenta-gratis {
-    padding: 2rem 0;
+    padding: 1rem 0 2rem 0;
 }
 
 .formulario input {
@@ -266,11 +266,6 @@ li a:hover {
     text-align: center;
 }
 
-.create-account {
-    padding: 2.7rem 0;
-    font-size: 1.7rem;
-}
-
 .iconos {
     width: 200px;
     display: flex;
@@ -294,10 +289,6 @@ li a:hover {
 .border-icon:hover {
     background-color: #4a4aee;
     cursor: pointer;
-}
-
-.cuenta-gratis {
-    padding: 2rem 0;
 }
 
 .formulario input {
@@ -466,11 +457,6 @@ li a:hover {
     text-align: center;
 }
 
-.create-account {
-    padding: 2.7rem 0;
-    font-size: 1.7rem;
-}
-
 .iconos {
     width: 200px;
     display: flex;
@@ -494,10 +480,6 @@ li a:hover {
 .border-icon:hover {
     background-color: #4a4aee;
     cursor: pointer;
-}
-
-.cuenta-gratis {
-    padding: 2rem 0;
 }
 
 .formulario input {

@@ -4,6 +4,7 @@ define('dbuser', '');
 define('dbpassword', '');
 define('dbname', '');
 define('dbhost', '');
+define('puerto', '3306');
 
 define('hostSMTP','');
 define('portSMTP','');

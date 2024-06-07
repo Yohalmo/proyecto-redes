@@ -27,7 +27,7 @@ class Controller extends DBContext{
     
     protected function validate_inputs($campos, $request){
         foreach($campos as $campo){
-            if(!isset($request->$campo)){
+            if(!isset($request->$campo) || (isset($request->$campo) && $request->$campo == '')){
                 return false;
             }
         }
