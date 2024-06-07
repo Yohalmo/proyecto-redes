@@ -18,7 +18,7 @@
     </div>
     <div class="nav-links">
         <a href="#"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#"><i class="fas fa-gamepad"></i> Juegos</a>
+        <a href="Juegos.php"><i class="fas fa-gamepad"></i> Juegos</a>
         <a href="#"><i class="fas fa-info-circle"></i> Sobre nosotros</a>
         <a href="#"><i class="fas fa-envelope"></i> Contacto</a>
     </div>
@@ -123,7 +123,7 @@
 
     <!-- Pie de página -->
     <footer>
-        &copy; CasinoPalms 2024
+        &copy; BetPalms 2024
     </footer>
 
     <!-- Enlaza el archivo JavaScript -->
