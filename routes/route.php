@@ -17,5 +17,6 @@ $routes = [
     'traga-monedas' => [GameController::class, 'traga_monedas'],
     'actualizar-ranking' => [GameController::class, 'get_ranking'],
     'guardar-juego' => [GameController::class, 'save_game'],
+    'listado-de-juegos' => [GameController::class, 'listado'],
 
 ];

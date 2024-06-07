@@ -19,9 +19,29 @@ function login() {
             password: $('#password').val()
         },
         function (data) {
-            alert(data.message);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: data.message,
+                showConfirmButton: false,
+                timer: 1500,
+                toast: true,
+                timerProgressBar: true,
+            });
+
+            setTimeout(() => {
+                location.replace('pagina-principal');
+            }, 2800);
         }).fail(function (response) {
-            alert(response.responseJSON.message);
+            Swal.fire({
+                position: "top-end",
+                icon: "error",
+                title: response.responseJSON.message,
+                showConfirmButton: false,
+                timer: 1500,
+                toast: true,
+                timerProgressBar: true,
+            });
         });
 }
 

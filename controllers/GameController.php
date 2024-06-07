@@ -9,6 +9,11 @@ class GameController extends Controller{
         parent::__construct();
     }
 
+    public function listado(){
+        $infoUser = $this->get_session('user-info');
+        return $this->view('Juegos', compact('infoUser'));
+    }
+
     public function cartas(){
         $infoUser = $this->get_session('user-info');
 
@@ -53,7 +58,8 @@ class GameController extends Controller{
     }
 
     public function main_page(){
-        return $this->view('Principal');
+        $infoUser = $this->get_session('user-info');
+        return $this->view('Principal', compact('infoUser'));
     }
 
     public function get_ranking(){
