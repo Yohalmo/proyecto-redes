@@ -12,8 +12,6 @@
         <h2 style="color: #333;">¡Bienvenido!</h2>
         <p>Estimado Usuario <?= $request->nombre ?? '' ?>,</p>
         <p>Te damos la bienvenida a nuestra plataforma. Tu registro ha sido exitoso.</p>
-        <p>Por favor, confirma tu dirección de correo electrónico haciendo clic en el siguiente enlace:</p>
-        <p><a href="https://www.ejemplo.com/confirmar-correo" style="background-color: #4CAF50; color: white; padding: 10px 20px; text-decoration: none; border-radius: 3px;">Confirmar Correo</a></p>
         <p>Si no has solicitado este registro, puedes ignorar este mensaje.</p>
         <p>¡Gracias!</p>
     </div>
