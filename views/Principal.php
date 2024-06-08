@@ -74,7 +74,7 @@
                 </div>
                 <div class="game-card">
                     <img src="images/balck jack.jpg" alt="Juego 3">
-                    <h3>Veintiuno</h3>
+                    <h3>blackjack</h3>
                     <a class="button" href="cartas">Jugar</a>
                 </div>
             </div>
